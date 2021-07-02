@@ -8,6 +8,16 @@ To this aim, we propose a computational pipeline to characterize the landscape o
 
 ## Installation
 
+* Install Python (from release version 3.0 on)
+
+* Install external libraries through the following commands:
+  * for conda users: conda create --name myenv --file integrate_requirements.txt
+  * for all other users: pip install -r integrate_requirements.txt
+
+* Using terminal, navigate to the favourite installation directory and run the following Git command:
+'git clone https://github.com/qLSLab/integrate.git'
+
+
 ## Usage
 
 **Step 1: prepareMareaInput**  
@@ -98,4 +108,13 @@ To this aim, we propose a computational pipeline to characterize the landscape o
 * Output:
   * For each pair of input cell line c_1 and c_2, a file returning the output of Mann-Whitney U test
 
+## Cite Us
+If you use INTEGRATE in your scientific work, please cite:
+**AGGIUNGERE REF BIORXIVE**
 
+## Getting Help
+For support, please contact:
+* marzia.difilippo@unimib.it
+* chiara.damiani@unimib.it
+* dario.pescini@unimib.it
+* bruno.galuzzi@unimib.it
