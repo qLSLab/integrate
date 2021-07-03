@@ -1,6 +1,6 @@
 # INTEGRATE: model-based multi-omics data integration to characterize multi-level metabolic regulation
 
-<img src="./images/workflow.pdf" width="100%"/>
+![](workflow.png)
 
 ## Overview
 The study of metabolism and its regulation is finding increasing application in various fields, including health, wellness, and biotransformations. Complete characterization of regulatory mechanisms controlling metabolism requires knowledge of metabolic fluxes, whose direct determination lags behind other omic technologies, such as metabolomics and transcriptomics. In isolation, these methodologies do not allow accurate characterization of metabolic regulation. Hence, there is a need for integrated methodologies to disassemble the interdependence between different regulatory layers controlling metabolism.
@@ -11,15 +11,13 @@ To this aim, we propose a computational pipeline to characterize the landscape o
 * Install Python (from release version 3.0 on)
 
 * Install external libraries through the following commands:
-  * for conda users: conda create --name myenv --file integrate_requirements.txt
-  * for all other users: pip install -r integrate_requirements.txt
+  * for conda users: conda create --name integrate --file integrate_env.txt
+  * for all other users: pip install -r integrate_env.txt
 
 * Using terminal, navigate to the favourite installation directory and run the following Git command:
 'git clone https://github.com/qLSLab/integrate.git'
 
-* dire che è richiesto l'installazione di gurobu (mettere come si installa e come si attiva la licenza: https://www.gurobi.com/downloads/end-user-license-agreement-academic/)
-https://support.gurobi.com/hc/en-us/articles/360040451771-How-do-I-update-my-token-server-to-a-newer-version-
-https://support.gurobi.com/hc/en-us/articles/360044290292 seguire instructions at this link
+* Gurobi solver installation is recommended but not mandatory. Follow instructions at: https://support.gurobi.com/hc/en-us/articles/360044290292. Academic license may be installed at: https://www.gurobi.com/downloads/end-user-license-agreement-academic/
 
 ## Usage
 
