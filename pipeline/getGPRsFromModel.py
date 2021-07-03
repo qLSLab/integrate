@@ -3,7 +3,6 @@
 import cobra as cb
 import genericLib as gL
 import os
-import sys
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -12,14 +11,12 @@ MODELDIR = workingDirs[3]
 
 # setting input data
 modelId = 'ENGRO2'
-modelName = 'ENGRO2_reversible_20210305'
 
 # load model
-model = cb.io.read_sbml_model(os.path.join(MODELDIR, modelName + '.xml'))
+model = cb.io.read_sbml_model(os.path.join(MODELDIR, modelId + '.xml'))
 
 # generate output file
-timeStamp = gL.getTimeStamp()
-outFile = gL.openFile(modelId + '_gpr_' + timeStamp, 'csv', dir=OUTDIR)
+outFile = gL.openFile(modelId + '_GPR', 'csv', dir=OUTDIR)
 gL.writeLineByLineToFile(outFile, ['id', 'rule'], '\t')
 
 for r in model.reactions:

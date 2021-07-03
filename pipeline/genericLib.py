@@ -92,18 +92,11 @@ def setPath(path):
         os.makedirs(path)
 
 
-
-
-def getTimeStamp():
-    return time.strftime('%Y%m%d%H%M%S', time.localtime())
-
 def createEmptyDictWithKeyTarget(keysTarget):
     dEmpty = {}
     for k in keysTarget:
         dEmpty[k] = None
     return dEmpty
-
-
 
 def unique(a):
 	""" return the list with duplicate elements removed """
