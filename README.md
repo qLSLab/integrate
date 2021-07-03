@@ -1,6 +1,6 @@
 # INTEGRATE: model-based multi-omics data integration to characterize multi-level metabolic regulation
 
-![](workflow.png)
+![](images/workflow.png)
 
 ## Overview
 The study of metabolism and its regulation is finding increasing application in various fields, including health, wellness, and biotransformations. Complete characterization of regulatory mechanisms controlling metabolism requires knowledge of metabolic fluxes, whose direct determination lags behind other omic technologies, such as metabolomics and transcriptomics. In isolation, these methodologies do not allow accurate characterization of metabolic regulation. Hence, there is a need for integrated methodologies to disassemble the interdependence between different regulatory layers controlling metabolism.
