@@ -107,6 +107,17 @@ To this aim, we propose a computational pipeline to characterize the landscape o
 * Output:
   * For each pair of input cell line c_1 and c_2, a file returning the output of Mann-Whitney U test
 
+**Step 8: Create metabolomic statistical test dataset**
+* Aim: create the metabolomic dataset to perform concordance analysis 
+* Usage: `python pipeline/script_create_metabolic_dataset.py`
+* Inputs:
+  Users may decided to leave the following inputs associated to their default values or set them as preferred:
+  * metabolic_model: the input model name. Default value: 'ENGRO2_irrev'.
+  * metabolic_data: dataset of metabolites
+  * valLog: value above which the ratio between the means of two cell lines are considered statistically different (default 1.2)
+* Output:
+  * For each pair of input cell line c_1 and c_2, a file returning the output of t-test
+  * A file returning the the log2 ratio between the means of each pair of input cell line c_1 and c_2.
 
 ## Getting Help
 For support, please contact:
