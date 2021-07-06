@@ -119,6 +119,26 @@ To this aim, we propose a computational pipeline to characterize the landscape o
   * For each pair of input cell line c_1 and c_2, a file returning the output of t-test
   * A file returning the the log2 ratio between the means of each pair of input cell line c_1 and c_2.
 
+**Step 9: Concordance data analysis**
+* Aim: create the results (dataset and figures) for concordance analysis
+* Usage: `python pipeline/script_concordance_analysis.py`
+* Inputs:
+  Users may decided to leave the following inputs associated to their default values or set them as preferred:
+  * metabolic_model: the input model name. Default value: 'ENGRO2_irrev'.
+  * metabolic_data: dataset of the statistical tests performed on the metabolic data
+  * ras_data: dataset of the means and results of statistical tests (t-test) performed for each pair of input cell line RAS c_1 and RAS c_2.
+  * fba_data: dataset of the medians and results of statistical test (mannWhitneyUTest) performed on the Flux distribution of each pair of input cell line c_1 and c_2.
+  * valLog: value above which the ratio between the means of two cell lines are considered statistically different(default 1.2)
+* Output:
+  * A dataset of concordance analysis (Cohen coefficient and pearson correlation) of RPS vs RAS, RPS vs LM, RPS vs RAS
+  * Heatmap showing the RPS vs RAS and the RPS vs FFD concordance scores, for reactions having a level of concordance between RPS and FFD greater than 0.2.
+  * Heatmap showing the RPS vs RAS and the RPS vs FFD concordance scores, for reactions having a level of concordance between RPS and FFD or RPS and RAS 
+  greater than 0.2.
+  * A scatterplot showing RPS vs FFD (x-axis) and the RPS vs RAS (y-axis) scores of the metabolic reactions for which quantification of all substrate
+abundances was available.
+  * Scatterplot of average FFD log2-fold change vs average RPS log2-fold change for ACONT reaction.
+  * Normalized average RPS and median FFD for all the reactions for which quantification of all substrate abundances was available.
+
 ## Getting Help
 For support, please contact:
 * chiara.damiani@unimib.it
