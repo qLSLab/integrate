@@ -76,9 +76,9 @@ GPR_reactions=[reaction.id for reaction in model.reactions if reaction.gene_reac
 datasetsFBA=list()
 datasetsRAS=list()
 for test in tests:
-    datasetsFBA.append(pd.read_csv('data/concordance_data_randomsampling/mwuTest_'+test[0]+'_vs_'+test[1]+'_20210409151056.csv',
+    datasetsFBA.append(pd.read_csv('rawData/concordance_data/mwuTest_'+test[0]+'_vs_'+test[1]+'.csv',
                                 sep="\t",index_col=0).sort_index())
-    datasetsRAS.append(pd.read_csv('data/concordance_data_randomsampling/ras_'+test[0]+'_vs_'+test[1]+'.csv',
+    datasetsRAS.append(pd.read_csv('rawData/concordance_data/ras_'+test[0]+'_vs_'+test[1]+'.csv',
                                 sep="\t",index_col=0).loc[GPR_reactions])
 
 

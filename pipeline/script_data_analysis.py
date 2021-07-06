@@ -40,7 +40,7 @@ sn.set(font_scale = 5)
 # In[4]:
 
 
-Data=pd.read_csv("data/CELLS-PROTEINS.csv",sep=";")
+Data=pd.read_csv("rawData/CELLS-PROTEINS.csv",sep=";")
 Data=Data[Data["time (h)"]!=144]
 Data['Line'] = Data['Line'].replace(['MDA-MB-361'],'MDAMB361')
 Data['Line'] = Data['Line'].replace(['MDA-MB-231'],'MDAMB231')
