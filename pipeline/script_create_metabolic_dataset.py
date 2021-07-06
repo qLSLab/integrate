@@ -23,7 +23,7 @@ import pandas as pd
 data_quality_filter=1                 #quality filter
 valLog=np.log2(1.2)                   #filter on the media
 namefile="outputs/resultsMetabolomic"  #name of the file where the data are written
-metabolic_model='data\ENGRO2_rev.xml'
+metabolic_model='data\ENGRO2_irrev.xml'
 metabolic_data='data/metabolomics_LM.csv'
 dict_to_convert_metnames='data/metsEngroVsMetabolomics.csv'
 output_means="outputs\medie_Met.csv"          #means
