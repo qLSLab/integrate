@@ -24,7 +24,7 @@ val=np.log2(1.2)     #threshold
 weight="linear"      #weight on the Kappa cohen
 name_file="outputs/resultsMetabolomic"  #directory of the data
 dir_output="outputs/"
-
+model_name="models/ENGRO2_irrev.xml"
 # Set the name of cell lines
 
 # In[ ]:
@@ -50,7 +50,7 @@ tests
 # In[ ]:
 
 
-model = cb.io.read_sbml_model('data\ENGRO2_rev.xml')
+model = cb.io.read_sbml_model(model_name)
 keys=[reaction.id for reaction in model.reactions]
 formule=[reaction.reaction for reaction in model.reactions]
 dict_formule={key:value for key,value in zip(keys,formule)}
