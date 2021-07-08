@@ -1,14 +1,9 @@
 import os
 import sys
-
-######
-import re
-
-
-import time
 import pandas as pd
 import numpy as np
 import re
+import time
 
 
 def setWorkingDirs(dataDir='rawData', outDir=None):
@@ -115,7 +110,8 @@ def splitStringEveryNChars(string, n):
     return [string[i:i+n] for i in range(0, len(string))]
 
 
-
+def getTimeStamp():
+    return time.strftime('%Y%m%d%H%M%S', time.localtime())
 
 
 def extractPercentage(element):

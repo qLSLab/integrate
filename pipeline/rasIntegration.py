@@ -6,6 +6,7 @@ import cobra as cb
 import pandas as pd
 import genericLib as gL
 import numpy as np
+import sys
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -101,6 +102,8 @@ if __name__ == '__main__':
             dfRASFVAModelConstraints = pd.merge(dfRASFVA, dfModelConstraints, how='inner', on='Rxn')
             dfRASFVAModelConstraints['lb_sign'] = np.sign(dfRASFVAModelConstraints.Lb)
             dfRASFVAModelConstraints['ub_sign'] = np.sign(dfRASFVAModelConstraints.Ub)
+
+
             epsilon = 0
             dfRASFVAModelConstraints[cellLine + 'Low'] = (epsilon + ((dfRASFVAModelConstraints.minimum_abs - epsilon) * getattr(dfRASFVAModelConstraints, 'norm_' + cellLine))) * getattr(dfRASFVAModelConstraints, 'lb_sign')
             dfRASFVAModelConstraints[cellLine + 'Up'] = (epsilon + ((dfRASFVAModelConstraints.maximum_abs - epsilon) * getattr(dfRASFVAModelConstraints, 'norm_' + cellLine))) * getattr(dfRASFVAModelConstraints, 'ub_sign')

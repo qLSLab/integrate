@@ -14,14 +14,15 @@ workingDirs = gL.setWorkingDirs()
 OUTDIR = workingDirs[2]
 
 # setting input data
-nSamples = int(sys.argv[1])
+tStampRS = sys.argv[1]
+nSamples = int(sys.argv[2])
 modelId = 'ENGRO2'
 lcellLines = ['MCF102A', 'SKBR3', 'MCF7', 'MDAMB231', 'MDAMB361']
 
 ## load input random sampling datasets
 dOFdf = {}
 for cellLine in lcellLines:
-    df = pd.read_csv(os.path.join(OUTDIR, 'randomSampling_' + modelId + '_nSol_' + str(nSamples) + '_' + cellLine + '.csv'), sep = '\t')
+    df = pd.read_csv(os.path.join(OUTDIR, 'randomSampling_' + modelId + '_nSol_' + str(nSamples) + '_' + cellLine + '_' + tStampRS + '.csv'), sep = '\t')
     dOFdf[cellLine] = df
 
 ## compute mann-whitney U test

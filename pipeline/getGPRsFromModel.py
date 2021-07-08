@@ -3,6 +3,8 @@
 import cobra as cb
 import genericLib as gL
 import os
+from cobra.io.sbml import validate_sbml_model
+import gurobipy
 
 # setting working dirs
 workingDirs = gL.setWorkingDirs()
@@ -11,6 +13,11 @@ MODELDIR = workingDirs[3]
 
 # setting input data
 modelId = 'ENGRO2'
+
+# (model, errors) = validate_sbml_model('./models/ENGRO2.xml')
+#
+# print(errors)
+
 
 # load model
 model = cb.io.read_sbml_model(os.path.join(MODELDIR, modelId + '.xml'))

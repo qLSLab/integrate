@@ -22,10 +22,12 @@ modelId = 'ENGRO2'
 ysiFileName = 'ysi_ratio.csv'
 epsilon = 1e-4
 lacRxn = 'EX_lac__L_e'
-glcRxn = 'EX_glc__D_e'
-glnRxn = 'EX_gln__L_e'
+glcRxn = 'EX_glc__D_e_r'
+glnRxn = 'EX_gln__L_e_r'
 gluRxn = 'EX_gluOUT__L_e'
 lReplicas = ['_A','_B']
+
+tStampRS = gL.getTimeStamp()
 
 if __name__ == '__main__':
     dfYSI = pd.read_csv(os.path.join(RAWDIR, ysiFileName), sep = '\t', index_col = 'Ratio')
@@ -33,7 +35,7 @@ if __name__ == '__main__':
 
     for cellLine in lcellLines:
         print(cellLine)
-        modelName = modelId + '_' + cellLine
+        modelName = modelId + '_' + cellLine + '_wIrrRxns'
         model = cb.io.read_sbml_model(os.path.join(MODELDIR, modelName + '.xml'))
         model.solver = 'gurobi'
         model.reactions.get_by_id(biomassRxn).objective_coefficient = 0
@@ -71,5 +73,5 @@ if __name__ == '__main__':
 
         model.reactions.get_by_id(biomassRxn).lower_bound = epsilon
         optgp = cb.sampling.sample(model, nSamples, method="optgp", thinning=10)
-        outputName = 'randomSampling_' + modelId + '_nSol_' + str(nSamples) + '_' + cellLine
+        outputName = 'randomSampling_' + modelId + '_nSol_' + str(nSamples) + '_' + cellLine + '_' + tStampRS
         optgp.to_csv(os.path.join(OUTDIR, outputName + '.csv'), sep = '\t', index=False)
