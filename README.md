@@ -94,7 +94,7 @@ To this aim, we propose a computational pipeline to characterize the landscape o
     * lReplicas: list of the sample replicas. Default value: ['_A','_B'].
     * epsilon: lower bound imposed on the biomass synthesis reaction. Default value: 1e-4.
 * Output:
-  * File containing the nSamples sampled solutions from each input sample model
+  * File named 'randomSampling_' + modelId + '_nSol_' + str(nSamples) + '_' + cellLine + '_' + timeStamp + '.csv' containing the nSamples sampled solutions from each input sample model
 
 **Step 7: mannWhitneyUTest**
 * Aim: compute the Mann-Whitney U test
@@ -107,32 +107,52 @@ To this aim, we propose a computational pipeline to characterize the landscape o
 * Output:
   * For each pair of input cell line c_1 and c_2, a file returning the output of Mann-Whitney U test
 
-**Step 8: Create metabolomic statistical test dataset**
-* Aim: create the metabolomic dataset to perform concordance analysis 
-* Usage: `python pipeline/script_create_metabolic_dataset.py`
+**Step 8: RAS t-test**
+* Aim: compute the t-test of RAS scores
+* Usage: `python pipeline/rasTtest.py`
 * Inputs:
   Users may decided to leave the following inputs associated to their default values or set them as preferred:
-  * metabolic_model: the input model name. Default value: 'ENGRO2_irrev'.
-  * metabolic_data: dataset of metabolites
-  * valLog: value above which the ratio between the means of two cell lines are considered statistically different (default 1.2)
+  * lcellLines: list of input sample names. Default value: ['MCF102A', 'SKBR3', 'MCF7', 'MDAMB231', 'MDAMB361'].
+  * rasScoreFile: output file of Step 2. Default value: 'ENGRO2_RAS'
+  * modelIrreversible: one of the irreversible models generated during Step 5. Default value: 'ENGRO2_MCF102A_wIrrRxns'
+* Outputs:
+  * The input rasScoreFile converted so that reversible reactions in the input modelIrreversible file are splitted. The resulting file is named rasScoreFile + '_splt.csv'
+  * For each pair of input cell line c_1 and c_2, a file returning the output of t-test named 'ras_' + c_1 +'_vs_' + c_2 + '.csv'
+  
+**Step 9: Create metabolomic statistical test dataset**
+* Aim: create the metabolomic dataset to perform concordance analysis
+* Usage: `python pipeline/createMetabolicDataset.py`
+* Inputs:
+  Users may decided to leave the following inputs associated to their default values or set them as preferred:
+  * data_quality_filter: quality filter. Default value: 1
+  * valLog: value above which the ratio between the means of two cell lines are considered statistically different. Default value: 1.2
+  * namefile: prefix name of the output files. Default value: 'resultsMetabolomic'
+  * metabolic_model: the input model name. Default value: 'ENGRO2_irrev.xml'
+  * metabolic_data: dataset of metabolites. Default value: 'metabolomics_LM.csv'
+  * dict_to_convert_metnames: Conversion file between ID of metabolites in metabolomics dataset and ID of metabolites in the input model. Default value: 'metsEngroVsMetabolomics.csv'
+  * output_means: output file name including all the computed means. Default value: 'medie_Met.csv'
 * Output:
   * For each pair of input cell line c_1 and c_2, a file returning the output of t-test
   * A file returning the the log2 ratio between the means of each pair of input cell line c_1 and c_2.
 
-**Step 9: Concordance data analysis**
+**Step 10: Concordance data analysis**
 * Aim: create the results (dataset and figures) for concordance analysis
-* Usage: `python pipeline/script_concordance_analysis.py`
+* Usage: `python pipeline/concordanceAnalysis.py`
 * Inputs:
   Users may decided to leave the following inputs associated to their default values or set them as preferred:
-  * metabolic_model: the input model name. Default value: 'ENGRO2_irrev'.
-  * metabolic_data: dataset of the statistical tests performed on the metabolic data
-  * ras_data: dataset of the means and results of statistical tests (t-test) performed for each pair of input cell line RAS c_1 and RAS c_2.
-  * fba_data: dataset of the medians and results of statistical test (mannWhitneyUTest) performed on the Flux distribution of each pair of input cell line c_1 and c_2.
-  * valLog: value above which the ratio between the means of two cell lines are considered statistically different(default 1.2)
+  * valLog: value above which the ratio between the means of two cell lines are considered statistically different. Default value: 1.2
+  * weight: weight on the Kappa Cohen. Default value: 'linear'
+  * resultsMetabolomicFile: prefix name of the output files of Step 9. Default value: 'resultsMetabolomic'
+  * rxn2Visualize: Name of interesting reaction within the model. Default value: 'ACONT'
+  * metabolic_model: the input model name. Default value: 'ENGRO2_irrev.xml'
+  * lcellLines: list of input sample names: Default value: ['MCF102A', 'SKBR3', 'MCF7', 'MDAMB231', 'MDAMB361'].
+  * biomassRxn: biomass reaction name. Default value: 'Biomass'.
+  * meansFile: output file of Step 9. Default value: 'medie_Met.csv'
+  * eps: a very close to 0 value to avoid undefined ratios. Default value: 0.00001.
 * Output:
   * A dataset of concordance analysis (Cohen coefficient and pearson correlation) of RPS vs RAS, RPS vs LM, RPS vs RAS
   * Heatmap showing the RPS vs RAS and the RPS vs FFD concordance scores, for reactions having a level of concordance between RPS and FFD greater than 0.2.
-  * Heatmap showing the RPS vs RAS and the RPS vs FFD concordance scores, for reactions having a level of concordance between RPS and FFD or RPS and RAS 
+  * Heatmap showing the RPS vs RAS and the RPS vs FFD concordance scores, for reactions having a level of concordance between RPS and FFD or RPS and RAS
   greater than 0.2.
   * A scatterplot showing RPS vs FFD (x-axis) and the RPS vs RAS (y-axis) scores of the metabolic reactions for which quantification of all substrate
 abundances was available.
