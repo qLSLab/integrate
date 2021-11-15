@@ -17,7 +17,7 @@ To this aim, we propose a computational pipeline to characterize the landscape o
 * Using terminal, navigate to the favourite installation directory and run the following Git command:
 'git clone https://github.com/qLSLab/integrate.git'
 
-* Gurobi solver installation is recommended but not mandatory. Follow instructions at: https://support.gurobi.com/hc/en-us/articles/360044290292. Academic license may be installed at: https://www.gurobi.com/downloads/end-user-license-agreement-academic/
+* The Pipeline was tested using GLPK solver (https://www.gnu.org/software/glpk/).
 
 ## Usage
 
