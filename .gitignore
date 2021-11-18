@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+rawData/desktop.ini
+desktop.ini
+figures/desktop.ini
+images/desktop.ini
+models/desktop.ini
+outputs/desktop.ini
+pipeline/desktop.ini
+rawData/concordance_data/desktop.ini
+
