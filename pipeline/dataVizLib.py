@@ -13,14 +13,13 @@ import mpl_scatter_density as mplSD
 # for color in colMap.colors:
 #     print(mpl.colors.to_hex(color))
 
-# dColors = {'MCF102A': '#E41A1C', 'SKBR3': '#377EB8', 'MCF7': '#4DAF4A',
-#            'MDAMB231': '#984EA3', 'MDAMB361': '#FF7F00'}
+#colorblind palette
 dColors = {
-    'MCF102A': '#FF7F00',
-    'SKBR3': '#0080FF',
-    'MCF7': '#FF0000',
-    'MDAMB231': '#4DAF4A',
-    'MDAMB361': '#CE00FF'
+    'MCF102A': '#029E73',
+    'SKBR3': '#D55E00',
+    'MCF7': '#CC78BC',
+    'MDAMB231': '#BAB029',
+    'MDAMB361': '#0173B2'
 }
 
 # plt.style.use('engro2')
