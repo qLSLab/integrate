@@ -629,11 +629,6 @@
           <speciesReference species="M_BIOMASSA_e" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-      <reaction metaid="meta_R_EX_h2o2_e" sboTerm="SBO:0000627" id="R_EX_h2o2_e" name="EX_H2O2x" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
-        <listOfReactants>
-          <speciesReference species="M_h2o2_e" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-      </reaction>
       <reaction metaid="meta_R_EX_gthox_e" sboTerm="SBO:0000627" id="R_EX_gthox_e" name="EX_GSSGx" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
           <speciesReference species="M_gthox_e" stoichiometry="1" constant="true"/>
@@ -5572,14 +5567,6 @@
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="M_co2_e" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-      </reaction>
-      <reaction metaid="meta_R_DmH2O2" sboTerm="SBO:0000176" id="R_DmH2O2" name="DmH2O2" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
-        <listOfReactants>
-          <speciesReference species="M_h2o2_m" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="M_h2o2_e" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
       <reaction metaid="meta_R_DmGSSG" sboTerm="SBO:0000176" id="R_DmGSSG" name="DmGSSG" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
