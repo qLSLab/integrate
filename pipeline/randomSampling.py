@@ -40,8 +40,6 @@ if __name__ == '__main__':
         model.solver = 'gurobi'
         model.reactions.get_by_id(biomassRxn).objective_coefficient = 0
 
-        FVA_no = cb.flux_analysis.flux_variability_analysis(model)
-
         lacL = model.reactions.get_by_id(lacRxn)
         glc = model.reactions.get_by_id(glcRxn)
         gln = model.reactions.get_by_id(glnRxn)
