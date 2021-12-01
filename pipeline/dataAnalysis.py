@@ -35,11 +35,11 @@ dotplotFigure = 'dotplot.png'
 
 # Set the color to draw the cell line
 dColors = {
-    'MCF102A': '#FF7F00',
-    'MDAMB231': '#4DAF4A',
-    'MDAMB361': '#CE00FF',
-    'MCF7': '#FF0000',
-    'SKBR3': '#0080FF'
+    'MCF102A': '#029E73',
+    'SKBR3': '#D55E00',
+    'MCF7': '#CC78BC',
+    'MDAMB231': '#BAB029',
+    'MDAMB361': '#0173B2'
 }
 
 sn.set(font_scale = 5)
@@ -157,7 +157,7 @@ lista=[el for el in datasetClustering.columns if len(M_engro_dict[el])>0]
 datasetClustering=datasetClustering.loc[:,lista]
 
 # Normalize data
-scaler = preprocessing.StandardScaler().fit(datasetClustering)
+scaler = preprocessing.MaxAbsScaler().fit(datasetClustering)
 X_scaled = scaler.transform(datasetClustering)
 
 # Tsne computation
@@ -190,8 +190,9 @@ plt.ylabel("TSNE 2")
 fig.savefig(os.path.join(FIGUREDIR,tsneFigure))
 
 # Dotplot
-adata=AnnData(datasetClustering)
+adata=AnnData(X_scaled)
 adata.obs["clusters"]=[key for key in dColors.keys() for i in range(18) ]
+adata.raw=adata
 
 sc.pp.scale(adata, max_value=10)
 sc.tl.pca(adata, svd_solver='arpack',n_comps=50)
@@ -205,6 +206,8 @@ mpl.rcParams.update(mpl.rcParamsDefault)
 dp=sc.pl.dotplot(adata, df_marker_list, groupby="clusters",expression_cutoff =0,
                swap_axes =True, dendrogram=False,return_fig=True,
                 size_title ="% of samples",
-                colorbar_title ="Mean Abundance")
+                 cmap ="binary",
+                 use_raw=True,
+                colorbar_title ="Normalized Mean")
 
 dp.savefig(os.path.join(FIGUREDIR, dotplotFigure))
