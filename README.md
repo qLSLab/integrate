@@ -79,9 +79,9 @@ To this aim, we propose a computational pipeline to characterize the landscape o
 
 **Step 6: randomSampling**
 * Aim: sample the feasible flux region of each cell relative model
-* Usage: `python pipeline/randomSampling.py nSamples`
+* Usage: `python pipeline/randomSampling.py nSamples nBatches`
 * Inputs:
-  * nSamples: number of solutions to sample
+  * nSamples: number of solutions to sample for each batch
   Users may decided to leave the following inputs associated to their default values or set them as preferred:
     * biomassRxn: biomass reaction name. Default value: 'Biomass'.
     * lcellLines: list of input sample names: Default value: ['MCF102A', 'SKBR3', 'MCF7', 'MDAMB231', 'MDAMB361'].
@@ -93,6 +93,7 @@ To this aim, we propose a computational pipeline to characterize the landscape o
     * gluRxn: the glutamate demand reaction. Default value: 'EX_gluOUT__L_e'.
     * lReplicas: list of the sample replicas. Default value: ['_A','_B'].
     * epsilon: lower bound imposed on the biomass synthesis reaction. Default value: 1e-4.
+ * nBatches: number of batches
 * Output:
   * File named 'randomSampling_' + modelId + '_nSol_' + str(nSamples) + '_' + cellLine + '_' + timeStamp + '.csv' containing the nSamples sampled solutions from each input sample model
 
