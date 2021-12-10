@@ -153,9 +153,10 @@ engro_M_dict=iL.reverse_dict(M_engro_dict)
 
 # Cluster analysis on metabolomic data
 datasetClustering=pd.read_csv(os.path.join(RAWDIR, metabolomicsLMFile), sep=';',index_col=0)
+
 lista=[el for el in datasetClustering.columns if len(M_engro_dict[el])>0]
 datasetClustering=datasetClustering.loc[:,lista]
-
+print(datasetClustering.shape)
 # Normalize data
 scaler = preprocessing.MaxAbsScaler().fit(datasetClustering)
 X_scaled = scaler.transform(datasetClustering)
@@ -166,10 +167,10 @@ X_embedded = TSNE(n_components=2,random_state=0).fit_transform(X_scaled)
 # Display the results of tsne
 sn.set_style("darkgrid")
 j=0
-fig=plt.figure(figsize=(10,10))
+fig=plt.figure(figsize=(15,10))
 for key in dColors.keys():
     elements=[i+18*j for i in range(18)]
-    plt.scatter(X_embedded[elements,0],X_embedded[elements,1],label=key,color=dColors[key])
+    plt.scatter(X_embedded[elements,0],X_embedded[elements,1],s=300,label=key,color=dColors[key])
     j=j+1
 
 plt.legend()
@@ -191,6 +192,7 @@ fig.savefig(os.path.join(FIGUREDIR,tsneFigure))
 
 # Dotplot
 adata=AnnData(X_scaled)
+adata.var.index=list(datasetClustering.columns)
 adata.obs["clusters"]=[key for key in dColors.keys() for i in range(18) ]
 adata.raw=adata
 
@@ -206,7 +208,7 @@ mpl.rcParams.update(mpl.rcParamsDefault)
 dp=sc.pl.dotplot(adata, df_marker_list, groupby="clusters",expression_cutoff =0,
                swap_axes =True, dendrogram=False,return_fig=True,
                 size_title ="% of samples",
-                 cmap ="binary",
+                 #cmap ="binary",
                  use_raw=True,
                 colorbar_title ="Normalized Mean")
 
