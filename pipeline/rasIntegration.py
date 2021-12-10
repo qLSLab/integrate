@@ -30,6 +30,11 @@ glnRxn = 'EX_gln__L_e'
 gluRxn = 'EX_gluOUT__L_e'
 lReplicas = ['_A','_B']
 
+#Yield Information
+valore=1e-3*180.15
+maxYield=0.000167998*valore
+minYield=3.90762E-05*valore
+
 if __name__ == '__main__':
     ## load YSI dataset
     dfYSI = pd.read_csv(os.path.join(RAWDIR, ysiFileName), sep = '\t', index_col = 'Ratio')
@@ -46,8 +51,24 @@ if __name__ == '__main__':
     for cellLine in lcellLines:
         model = cb.io.read_sbml_model(os.path.join(MODELDIR, modelId + '.xml'))
         model.reactions.get_by_id(biomassRxn).objective_coefficient = 0
-        model.solver = 'gurobi'
+        #model.solver = 'gurobi'
 
+        #Yield
+        constrainUp = model.problem.Constraint(0.131972*model.reactions.Biomass.flux_expression+
+                                              maxYield*model.reactions.EX_glc__D_e.flux_expression, 
+                                                     lb=-1000, 
+                                                     ub=0)
+        constrainUp.name="yield_up" 
+
+        constrainDown = model.problem.Constraint(0.131972*model.reactions.Biomass.flux_expression+
+                                              minYield*model.reactions.EX_glc__D_e.flux_expression, 
+                                                     lb=0, 
+                                                     ub=1000)    
+        constrainDown.name="yield_down" 
+
+        model.add_cons_vars(constrainUp)
+        model.add_cons_vars(constrainDown)        
+            
         if imposeYSI == 'Y':
             lacL = model.reactions.get_by_id(lacRxn)
             glc = model.reactions.get_by_id(glcRxn)
@@ -87,7 +108,7 @@ if __name__ == '__main__':
                 model.reactions.get_by_id(id).upper_bound = ub
 
         if imposeRasConstraints == 'Y':
-            FVA_no = cb.flux_analysis.flux_variability_analysis(model)
+            FVA_no = cb.flux_analysis.flux_variability_analysis(model).round(10)
             dfRASFVA = pd.merge(RAS_norm, FVA_no, how='inner', left_on='Rxn', right_index=True)
             dfRASFVA['minimum_abs'] = abs(dfRASFVA.minimum)
             dfRASFVA['maximum_abs'] = abs(dfRASFVA.maximum)
@@ -123,4 +144,5 @@ if __name__ == '__main__':
                     model.reactions.get_by_id(ID).upper_bound = float(getattr(row, cellLine + 'Up'))
 
         model.reactions.get_by_id(biomassRxn).objective_coefficient = 1.0
+
         cb.io.write_sbml_model(model, os.path.join(MODELDIR, modelId + '_' + cellLine + '.xml'))
