@@ -17,7 +17,7 @@ MODELDIR = workingDirs[3]
 
 # setting input data
 gprRule = 'ENGRO2_GPR'
-rnaSeqFileName = 'FPKM_Breast_forMarea_ENGRO2_hgnc_id.tsv'
+rnaSeqFileName = 'FPKM_ENGRO2_hgnc_id.tsv'
 modelId = 'ENGRO2'
 regexOrgSpecific = r"([A-Z0-9.:]+)"
 

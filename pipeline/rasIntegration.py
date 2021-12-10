@@ -109,6 +109,7 @@ if __name__ == '__main__':
 
         if imposeRasConstraints == 'Y':
             FVA_no = cb.flux_analysis.flux_variability_analysis(model).round(10)
+            FVA_no.to_csv("FVA_"+cellLine+".csv")
             dfRASFVA = pd.merge(RAS_norm, FVA_no, how='inner', left_on='Rxn', right_index=True)
             dfRASFVA['minimum_abs'] = abs(dfRASFVA.minimum)
             dfRASFVA['maximum_abs'] = abs(dfRASFVA.maximum)
