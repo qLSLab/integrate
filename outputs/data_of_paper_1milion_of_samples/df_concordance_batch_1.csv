@@ -1,0 +1,532 @@
+,RPSvsFBA cohen,RPSvsRAS cohen,FBAvsRAS cohen
+CYSTS:hcys__L_c + ser__L_c --> cyst__L_c + h2o_c,0.08163265306122458,0.08163265306122458,1.0
+ASPte_r:asp__L_e --> asp__L_c,,,1.0
+r2534_r:thr__L_e --> thr__L_c,,,0.9
+DmAsp:asp__L_c --> asp__L_e,-0.30000000000000004,-0.23711340206185572,0.9
+FUMtm_f:fum_c + pi_m --> fum_m + pi_c,,,0.9
+PYRt2m_b:h_m + pyr_m --> h_c + pyr_c,,,0.8979591836734694
+MMSAD1m:2mop_m + coa_m + nad_m --> co2_m + nadh_m + ppcoa_m,,,0.8979591836734694
+SACCD3m:akg_m + h_m + lys__L_m + nadph_m --> h2o_m + nadp_m + saccrp__L_m,,,0.8979591836734694
+VALTAim:akg_m + val__L_m --> 3mob_m + glu__L_m,0.16666666666666663,0.2857142857142858,0.8979591836734694
+r0525:h2o_m + nad_m + saccrp__L_m --> L2aadp6sa_m + glu__L_m + h_m + nadh_m,,,0.8979591836734694
+FUMm_f:fum_m + h2o_m --> mal__L_m,,,0.8936170212765957
+FUMm_b:mal__L_m --> fum_m + h2o_m,0.0,0.0,0.8936170212765957
+MTAP:5mta_c + pi_c --> 5mdr1p_c + ade_c,,,0.8
+RPE_f:ru5p__D_c --> xu5p__D_c,0.6875,0.47916666666666663,0.797979797979798
+RPI:ru5p__D_c --> r5p_c,0.6875,0.6875,0.797979797979798
+KYN:Lkynr_c + h2o_c --> ala__L_c + anth_c + h_c,,,0.797979797979798
+ICDHym_f:icit_m + nadp_m --> akg_m + co2_m + nadph_m,,,0.797979797979798
+FUMtm_b:fum_m + pi_c --> fum_c + pi_m,,,0.797979797979798
+CRNt:crn_c --> crn_e,,,0.797979797979798
+ICDHym_b:akg_m + co2_m + nadph_m --> icit_m + nadp_m,,,0.797979797979798
+5MTHFt:5mthf_c --> 5mthf_e,0.0,0.0,0.7938144329896907
+r0963_r:fol_e --> fol_c,,,0.7938144329896907
+PGM_b:2pg_c --> 3pg_c,,,0.7938144329896907
+MDH_f:mal__L_c + nad_c --> h_c + nadh_c + oaa_c,-0.44329896907216515,-0.31868131868131866,0.7938144329896907
+MDH_b:h_c + nadh_c + oaa_c --> mal__L_c + nad_c,,,0.7938144329896907
+r0407:HC00361_c --> dhap_c + e4p_c,,,0.7938144329896907
+MTHFD2i_f:methf_c + nadh_c --> mlthf_c + nad_c,,,0.7916666666666666
+ENO_f:2pg_c --> h2o_c + pep_c,,,0.7826086956521738
+GLYt4_r:gly_e --> gly_c,,,0.7802197802197802
+PEPCK_re:gtp_c + oaa_c --> co2_c + gdp_c + pep_c,,,0.7802197802197802
+NDPK1:atp_c + gdp_c --> adp_c + gtp_c,,,0.7
+HCO3E:co2_c + h2o_c --> h_c + hco3_c,,,0.7
+ASNN:asn__L_c + h2o_c --> asp__L_c + nh4_c,,,0.7
+ASPTA_b:glu__L_c + oaa_c --> akg_c + asp__L_c,,,0.7
+KYN3OX:Lkynr_c + h_c + nadph_c + o2_c --> h2o_c + hLkynr_c + nadp_c,,,0.6938775510204083
+GLNS:atp_c + glu__L_c + nh4_c --> adp_c + gln__L_c + h_c + pi_c,,,0.6938775510204083
+MTHFD2i_b:mlthf_c + nad_c --> methf_c + nadh_c,0.6875,0.5652173913043478,0.6938775510204083
+BBHOX:4tmeabutn_c + akg_c + o2_c --> co2_c + crn_c + succ_c,,,0.6875
+ACONTm_b:icit_m --> cit_m,,,0.6875
+ACONTm_f:cit_m --> icit_m,-0.23711340206185572,-0.022727272727272707,0.6875
+r2526_r:ser__L_e --> ser__L_c,,,0.6808510638297873
+GLUDym_b:glu__L_m + h2o_m + nadp_m --> akg_m + h_m + nadph_m + nh4_m,,,0.6808510638297873
+DmLact:lac__L_c --> lac__L_e,-0.1842105263157896,-0.19047619047619047,0.6808510638297873
+FUM_b:mal__L_c --> fum_c + h2o_c,0.0,0.0,0.6808510638297873
+IPDDI:ipdp_c --> dmpp_c,0.0,0.0,0.6666666666666667
+MDRPD:5mdru1p_c --> dkmpp_c + h2o_c,,,0.6
+H2Ot_b:h2o_c --> h2o_e,,,0.6
+r1616_r:trp__L_e --> trp__L_c,,,0.6
+ENO_b:h2o_c + pep_c --> 2pg_c,,,0.6
+CystineReductaseNADPH:Lcystin_c + h_c + nadph_c --> 2.0 cys__L_c + nadp_c,,,0.6
+ALATA_L_b:akg_c + ala__L_c --> glu__L_c + pyr_c,0.17525773195876282,0.17525773195876282,0.595959595959596
+PYRt2m_f:h_c + pyr_c --> h_m + pyr_m,,,0.595959595959596
+GLUt4:glu__L_c --> glu__L_e,,,0.595959595959596
+FBP:fdp_c + h2o_c --> f6p_c + pi_c,,,0.595959595959596
+TALA_f:g3p_c + s7p_c --> e4p_c + f6p_c,-0.19565217391304368,-0.19565217391304368,0.595959595959596
+TYRt_r:tyr__L_e --> tyr__L_c,,,0.595959595959596
+GLNt_r:gln__L_e --> gln__L_c,,,0.5876288659793814
+CYSTA:akg_c + cys__L_c --> glu__L_c + mercppyr_c,0.08163265306122458,0.042553191489361764,0.5876288659793814
+TKT2_b:f6p_c + g3p_c --> e4p_c + xu5p__D_c,0.25531914893617025,0.14634146341463405,0.5876288659793814
+PGM_f:3pg_c --> 2pg_c,-0.17021276595744683,-0.3414634146341464,0.5876288659793814
+GDR:gthox_c + h_c + nadh_c --> 2.0 gthrd_c + nad_c,,,0.5876288659793814
+HISDr:his__L_c --> nh4_c + urcan_c,,,0.5876288659793814
+VALTA:akg_c + val__L_c --> 3mob_c + glu__L_c,-0.6666666666666667,-0.4583333333333335,0.5833333333333333
+AHCi:ahcys_c + h2o_c --> adn_c + hcys__L_c,,,0.5652173913043478
+PGK:13dpg_c + adp_c --> 3pg_c + atp_c,-0.6494845360824744,-0.23711340206185572,0.5604395604395604
+LDH_L:h_c + nadh_c + pyr_c --> lac__L_c + nad_c,,,0.5604395604395604
+GLUDym_f:akg_m + h_m + nadph_m + nh4_m --> glu__L_m + h2o_m + nadp_m,,,0.5604395604395604
+SUCOAS1m_b:coa_m + gtp_m + succ_m --> gdp_m + pi_m + succoa_m,0.0,0.0,0.5294117647058824
+r0408:atp_c + s7p_c --> HC00361_c + adp_c + h_c,,,0.5294117647058824
+GAPD:g3p_c + nad_c + pi_c --> 13dpg_c + h_c + nadh_c,,,0.5238095238095238
+ECOAH12m:2mp2coa_m + h2o_m --> 3hibutcoa_m,,,0.5
+MMMm:mmcoa__R_m --> succoa_m,-0.19999999999999996,-0.09756097560975618,0.5
+G5SADs_f:glu5sa_c --> 1pyr5c_c + h2o_c + h_c,0.4444444444444444,-0.05263157894736836,0.4897959183673469
+HMR_4964:cit_m + h_m + mal__L_c --> cit_c + h_c + mal__L_m,,,0.4897959183673469
+IMPC:fprica_c --> h2o_c + imp_c,,,0.4897959183673469
+r0074_f:glu__L_m + 2.0 h_m + nadh_m --> glu5sa_m + h2o_m + nad_m,,,0.4897959183673469
+AICART:10fthf_c + aicar_c --> fprica_c + thf_c,0.17525773195876282,-0.17021276595744683,0.4897959183673469
+AKGMALtm_f:akg_c + mal__L_m --> akg_m + mal__L_c,-0.30434782608695654,-0.5625,0.4897959183673469
+ARGt5r_r:arg__L_e --> arg__L_c,,,0.4897959183673469
+HMR_1467:HC01118_c + h_c + nadph_c --> nadp_c + ppi_c + sql_c,,,0.46808510638297873
+ORPT:orot_c + prpp_c --> orot5p_c + ppi_c,,,0.46808510638297873
+G3PD1ir:dhap_c + h_c + nadh_c --> glyc3p_c + nad_c,,,0.46808510638297873
+HMR_1465:2.0 frdp_c --> HC01118_c + ppi_c,-0.31868131868131866,-0.3829787234042552,0.46808510638297873
+ORNDC:h_c + orn_c --> co2_c + ptrc_c,,,0.46808510638297873
+OMPDC:h_c + orot5p_c --> co2_c + ump_c,,,0.46808510638297873
+TKT1_b:g3p_c + s7p_c --> r5p_c + xu5p__D_c,0.04761904761904767,-0.1842105263157896,0.46808510638297873
+GMPS2:atp_c + gln__L_c + h2o_c + xmp_c --> amp_c + glu__L_c + gmp_c + 2.0 h_c + ppi_c,,,0.46808510638297873
+FUM_f:fum_c + h2o_c --> mal__L_c,,,0.46808510638297873
+H2Ot_f:h2o_e --> h2o_c,,,0.4318181818181819
+VALtec_r:val__L_e --> val__L_c,,,0.4
+3SALAASPm:3sala_c + asp__L_m --> 3sala_m + asp__L_c,-0.30000000000000004,-0.12244897959183665,0.4
+H2Otm_f:h2o_c --> h2o_m,,,0.4
+GTHPm:2.0 gthrd_m + h2o2_m --> gthox_m + 2.0 h2o_m,,,0.4
+MTHFC_f:10fthf_c + h_c --> h2o_c + methf_c,,,0.3939393939393939
+AKGMALtm_b:akg_m + mal__L_c --> akg_c + mal__L_m,-0.35416666666666674,-0.5625,0.3939393939393939
+ICDHyr:icit_c + nadp_c --> akg_c + co2_c + nadph_c,,,0.3939393939393939
+MDHm_f:mal__L_m + nad_m --> h_m + nadh_m + oaa_m,-0.098901098901099,-0.09756097560975618,0.3902439024390243
+MDHm_b:h_m + nadh_m + oaa_m --> mal__L_m + nad_m,,,0.3902439024390243
+HMR_1495:4mzym_int1_c + nadp_c --> 4mzym_int2_c + co2_c + h_c + nadph_c,,,0.3846153846153846
+GHMT2r_b:gly_c + h2o_c + mlthf_c --> ser__L_c + thf_c,,,0.38144329896907214
+PRASCSi:5aizc_c + asp__L_c + atp_c --> 25aics_c + adp_c + h_c + pi_c,,,0.38144329896907214
+AIRCr:air_c + co2_c --> 5aizc_c + h_c,,,0.38144329896907214
+SMO:h_c + nadph_c + o2_c + sql_c --> Ssq23epx_c + h2o_c + nadp_c,,,0.38144329896907214
+DHORD9:dhor__S_c + q10_m --> orot_c + q10h2_m,,,0.375
+ADNK1:adn_c + atp_c --> adp_c + amp_c + h_c,,,0.375
+PMEVK:5pmev_c + atp_c --> 5dpmev_c + adp_c,,,0.368421052631579
+CYOOm2i:4.0 focytC_m + 8.0 h_m + o2_m --> 4.0 ficytC_m + 2.0 h2o_m + 4.0 h_c,,,0.368421052631579
+ATPS4mi:adp_m + 4.0 h_c + pi_m --> atp_m + h2o_m + 3.0 h_m,,,0.34782608695652173
+TPI:dhap_c --> g3p_c,,,0.34065934065934067
+GTHOr:gthox_c + h_c + nadph_c --> 2.0 gthrd_c + nadp_c,,,0.34065934065934067
+LEUTA:akg_c + leu__L_c --> 4mop_c + glu__L_c,-0.36363636363636354,-0.4583333333333335,0.31818181818181823
+CTPS1:atp_c + nh4_c + utp_c --> adp_c + ctp_c + 2.0 h_c + pi_c,,,0.31818181818181823
+GMPS:atp_c + nh4_c + xmp_c --> amp_c + gmp_c + 2.0 h_c + ppi_c,,,0.31818181818181823
+H2Otm_b:h2o_m --> h2o_c,,,0.31818181818181823
+ADPT:ade_c + prpp_c --> amp_c + ppi_c,,,0.30000000000000004
+SPMS:ametam_c + ptrc_c --> 5mta_c + h_c + spmd_c,,,0.30000000000000004
+RPE_b:xu5p__D_c --> ru5p__D_c,0.0,0.47916666666666663,0.30000000000000004
+GTHPi:2.0 gthrd_c + h2o2_c --> gthox_c + 2.0 h2o_c,,,0.30000000000000004
+ACONT:cit_c --> icit_c,0.7938144329896907,0.09999999999999998,0.30000000000000004
+HIBDm:3hmp_m + nad_m --> 2mop_m + h_m + nadh_m,,,0.30000000000000004
+RNDR4:udp_c --> dudp_c + h2o_c,,,0.2941176470588235
+G6PP:g6p_c + h2o_c --> glc__D_c + pi_c,,,0.2941176470588235
+HMR_1505:M00955_c + nadp_c --> M01067_c + co2_c + h_c + nadph_c,,,0.2941176470588235
+ACACT1r:2.0 accoa_c --> aacoa_c + coa_c,-0.1842105263157896,-0.16666666666666674,0.2941176470588235
+GARFT:10fthf_c + gar_c --> fgam_c + h_c + thf_c,,,0.2857142857142858
+PRFGS:atp_c + fgam_c + gln__L_c + h2o_c --> adp_c + fpram_c + glu__L_c + h_c + pi_c,,,0.2857142857142858
+PRAIS:atp_c + fpram_c --> adp_c + air_c + 2.0 h_c + pi_c,,,0.2857142857142858
+PRAGSr:atp_c + gly_c + pram_c --> adp_c + gar_c + h_c + pi_c,,,0.2857142857142858
+TALA_b:e4p_c + f6p_c --> g3p_c + s7p_c,-0.36363636363636354,-0.3829787234042552,0.2857142857142858
+r0801_f:gdp_c + gtp_m --> gdp_m + gtp_c,0.13043478260869557,0.11764705882352944,0.2857142857142857
+GLUPRT:gln__L_c + h2o_c + prpp_c --> glu__L_c + ppi_c + pram_c,,,0.27083333333333326
+ADSL1r:dcamp_c --> amp_c + fum_c,0.47916666666666663,0.04761904761904767,0.27083333333333326
+ADSL2r:25aics_c --> aicar_c + fum_c,0.25531914893617025,0.21052631578947367,0.27083333333333326
+ABUTH:HC00576_c + h2o_c --> 4abut_c + his__L_c,,,0.27083333333333326
+PTRCOX1:h2o_c + o2_c + ptrc_c --> 4abutn_c + h2o2_c + nh4_c,,,0.27083333333333326
+HMR_1504:M00959_c + h_c + nadph_c + o2_c --> M00955_c + h2o_c + nadp_c,,,0.25531914893617025
+HMR_1490:44mzym_c + h_c + nadph_c + o2_c --> M00961_c + h2o_c + nadp_c,,,0.25531914893617025
+PPA:h2o_c + ppi_c --> h_c + 2.0 pi_c,,,0.25531914893617025
+IMPDH2:h2o_c + imp_c + nad_c --> h_c + nadh_c + xmp_c,,,0.25531914893617025
+HMR_1502:HC02110_c + h_c + nadph_c + o2_c --> M00963_c + h2o_c + nadp_c,,,0.25531914893617025
+3HAO:3hanthrn_c + o2_c --> cmusa_c + h_c,,,0.25531914893617025
+HMR_1493:M00961_c + h_c + nadph_c + o2_c --> M00957_c + 2.0 h2o_c + nadp_c,,,0.25531914893617025
+HMR_1503:M00963_c + h_c + nadph_c + o2_c --> M00959_c + 2.0 h2o_c + nadp_c,,,0.25531914893617025
+HMR_1494:M00957_c + h_c + nadph_c + o2_c --> 4mzym_int1_c + h2o_c + nadp_c,,,0.25531914893617025
+OIVD1m:4mop_m + coa_m + nad_m --> co2_m + ivcoa_m + nadh_m,,,0.23913043478260865
+r0801_b:gdp_m + gtp_c --> gdp_c + gtp_m,-0.14583333333333348,0.11764705882352944,0.23913043478260865
+CYStec_r:cys__L_e --> cys__L_c,,,0.20454545454545459
+RNDR1:adp_c --> dadp_c + h2o_c,-0.25,-0.5384615384615385,0.20454545454545459
+OIVD2m:3mob_m + coa_m + nad_m --> co2_m + ibcoa_m + nadh_m,,,0.19999999999999996
+ACCOAC:accoa_c + atp_c + hco3_c --> adp_c + h_c + malcoa_c + pi_c,,,0.19999999999999996
+NBAHH_ir:carn_c + h2o_c --> ala_B_c + his__L_c,,,0.19999999999999996
+r0885:gthrd_c + pi_m --> gthrd_m + pi_c,,,0.19191919191919193
+ARGSS:asp__L_c + atp_c + citr__L_c --> amp_c + argsuc_c + h_c + ppi_c,,,0.19191919191919193
+r0450:L2aadp_m + akg_m --> 2oxoadp_m + glu__L_m,-0.12244897959183665,0.4897959183673469,0.19191919191919193
+SUCFUMtm_r:fum_m + succ_c --> fum_c + succ_m,-0.41414141414141414,-0.010101010101010166,0.19191919191919193
+LEUTAm:akg_m + leu__L_m --> 4mop_m + glu__L_m,0.08163265306122458,0.2857142857142858,0.19191919191919193
+MGCHrm:3mgcoa_m + h2o_m --> hmgcoa_m,,,0.19191919191919193
+HGNTOR:hgentis_c + o2_c --> 4mlacac_c + h_c,,,0.17808219178082185
+FBA:fdp_c --> dhap_c + g3p_c,0.0,0.0,0.17525773195876282
+ASPTA_f:akg_c + asp__L_c --> glu__L_c + oaa_c,0.6875,-0.022727272727272707,0.17525773195876282
+r0074_b:glu5sa_m + h2o_m + nad_m --> glu__L_m + 2.0 h_m + nadh_m,,,0.17525773195876282
+G5SADs_b:1pyr5c_c + h2o_c + h_c --> glu5sa_c,,,0.17525773195876282
+HMGCOAR:2.0 h_c + hmgcoa_c + 2.0 nadph_c --> coa_c + mev__R_c + 2.0 nadp_c,,,0.17525773195876282
+GHMT2r_f:ser__L_c + thf_c --> gly_c + h2o_c + mlthf_c,,,0.17525773195876282
+CYOR_u10mi:2.0 ficytC_m + 2.0 h_m + q10h2_m --> 2.0 focytC_m + 4.0 h_c + q10_m,,,0.17525773195876282
+Complex1ROS:4.75 h_m + nadh_m + 0.05 o2_m + 0.95 q10_m --> 3.8 h_c + nad_m + 0.05 o2s_m + 0.95 q10h2_m,,,0.16666666666666663
+C3STDH1:4mzym_int1_c + nad_c --> 4mzym_int2_c + co2_c + h_c + nadh_c,,,0.16666666666666663
+CYTK1_r:atp_c + cmp_c --> adp_c + cdp_c,,,0.16666666666666663
+HMR_1477:h_c + lanost_c + nadph_c + o2_c --> M00939_c + h2o_c + nadp_c,,,0.14634146341463405
+HMR_1478:M00939_c + h_c + nadph_c + o2_c --> M00937_c + 2.0 h2o_c + nadp_c,,,0.14634146341463405
+HMR_1479:M00937_c + nadph_c + o2_c --> 44mctr_c + for_c + h2o_c + nadp_c,,,0.14634146341463405
+FTCD:5forthf_c + 2.0 h_c --> methf_c + nh4_c,,,0.13978494623655924
+CBPS:2.0 atp_c + gln__L_c + h2o_c + hco3_c --> 2.0 adp_c + cbp_c + glu__L_c + 2.0 h_c + pi_c,,,0.13043478260869557
+ASPCT:asp__L_c + cbp_c --> cbasp_c + h_c + pi_c,,,0.13043478260869557
+DHORTS:cbasp_c + h_c --> dhor__S_c + h2o_c,,,0.13043478260869557
+TMDS:dump_c + mlthf_c --> dhf_c + dtmp_c,,,0.125
+r2532_r:asn__L_e --> asn__L_c,,,0.1208791208791209
+MACACI:4mlacac_c --> 4fumacac_c,,,0.09999999999999998
+SPRMS:ametam_c + spmd_c --> 5mta_c + h_c + sprm_c,,,0.09999999999999998
+HMR_1516:chlstol_c + h_c + nadph_c + o2_c --> ddsmsterol_c + 2.0 h2o_c + nadp_c,,,0.09999999999999998
+2OXOADOXm:2oxoadp_m + coa_m + nad_m --> co2_m + glutcoa_m + nadh_m,,,0.09999999999999998
+HMR_1509:M01067_c + h_c + nadph_c --> nadp_c + zymst_c,,,0.09999999999999998
+ALATA_L_f:glu__L_c + pyr_c --> akg_c + ala__L_c,,,0.09999999999999998
+GND:6pgc_c + nadp_c --> co2_c + nadph_c + ru5p__D_c,0.4,0.13793103448275856,0.09999999999999998
+HMR_1500:4mzym_int2_c + 3.0 h_c + nadp_c --> HC02110_c + nadph_c,,,0.09999999999999998
+ASPT:asp__L_c --> fum_c + nh4_c,0.30000000000000004,-0.5384615384615385,0.09999999999999998
+ACOAD9m:fad_m + ibcoa_m --> 2mp2coa_m + fadh2_m,,,0.09999999999999998
+OCOAT1m:acac_m + succoa_m --> aacoa_m + succ_m,0.042553191489361764,-0.13636363636363624,0.08163265306122458
+ASP1DC:asp__L_c + h_c --> ala_B_c + co2_c,,,0.08163265306122458
+r0283:ala_B_c + atp_c + his__L_c --> amp_c + carn_c + h_c + ppi_c,,,0.08163265306122458
+LYStm:h_m + lys__L_c --> h_c + lys__L_m,,,0.08163265306122458
+HCO3Em:co2_m + h2o_m --> h_m + hco3_m,,,0.08163265306122458
+UMPK:atp_c + ump_c --> adp_c + udp_c,,,0.08163265306122458
+DPMVD:5dpmev_c + atp_c --> adp_c + co2_c + ipdp_c + pi_c,,,0.0625
+HEX1:atp_c + glc__D_c --> adp_c + g6p_c + h_c,,,0.0625
+URCN:h2o_c + urcan_c --> 4izp_c,,,0.0625
+UREAt:urea_c --> urea_e,,,0.042553191489361764
+PYRt2:h_e + pyr_e --> h_c + pyr_c,,,0.042553191489361764
+CYSO:cys__L_c + o2_c --> 3sala_c + 2.0 h_c,,,0.021739130434782483
+CBPSam:2.0 atp_m + hco3_m + nh4_m --> 2.0 adp_m + cbp_m + 2.0 h_m + pi_m,,,0.0
+TMDK1:atp_c + thymd_c --> adp_c + dtmp_c + h_c,,,0.0
+THYMDt1_r:thymd_e --> thymd_c,,,0.0
+betaOxidation:7.0 coa_m + 7.0 fad_m + 7.0 h2o_m + 7.0 nad_m + ptth_m --> 8.0 accoa_m + 7.0 fadh2_m + 7.0 h_m + 7.0 nadh_m,,,0.0
+RBFK:atp_c + ribflv_c --> adp_c + fmn_c + h_c,,,0.0
+palmitateActivation:atp_c + coa_c + hdca_c --> amp_c + ppi_c + ptth_c,,,0.0
+FMNAT:atp_c + fmn_c + h_c --> fad_c + ppi_c,,,0.0
+ACITL:atp_c + cit_c + coa_c --> accoa_c + adp_c + oaa_c + pi_c,,,0.0
+ORNt4m:citr__L_m + h_c + orn_c --> citr__L_c + h_m + orn_m,,,0.0
+ARGN:arg__L_c + h2o_c --> orn_c + urea_c,,,0.0
+G6PDH2r:g6p_c + nadp_c --> 6pgl_c + h_c + nadph_c,0.0,0.4,0.0
+3SALATAim:3sala_m + akg_m + h_m --> 3snpyr_m + glu__L_m,,,0.0
+ILETAm:akg_m + ile__L_m --> 3mop_m + glu__L_m,,,0.0
+HMGCOASm:aacoa_m + accoa_m + h2o_m --> coa_m + h_m + hmgcoa_m,,,0.0
+ILETA:akg_c + ile__L_c --> 3mop_c + glu__L_c,,,0.0
+MMEm:mmcoa__S_m --> mmcoa__R_m,-0.17021276595744683,0.46808510638297873,-0.010101010101010166
+TMLYSOX:akg_c + o2_c + tmlys_c --> 3htmelys_c + co2_c + succ_c,,,-0.010101010101010166
+CSNt_r:csn_e --> csn_c,,,-0.010101010101010166
+NDPK5:atp_c + dgdp_c --> adp_c + dgtp_c,,,-0.012658227848101111
+NDPK7:atp_c + dcdp_c --> adp_c + dctp_c,,,-0.012658227848101111
+RNDR3:cdp_c --> dcdp_c + h2o_c,,,-0.012658227848101111
+HMGCOAS:aacoa_c + accoa_c + h2o_c --> coa_c + h_c + hmgcoa_c,,,-0.012658227848101111
+RNDR2:gdp_c --> dgdp_c + h2o_c,0.13793103448275856,0.14634146341463405,-0.012658227848101111
+ALAPAT4te:ala__L_e --> ala__L_c,,,-0.022727272727272707
+NDPK3_f:adp_c + ctp_c --> atp_c + cdp_c,,,-0.022727272727272707
+CARPEPT1tc_r:carn_e + h_e --> carn_c + h_c,,,-0.030927835051546504
+C14STR:44mctr_c + h_c + nadph_c --> 44mzym_c + nadp_c,,,-0.030927835051546504
+LYSt5r_r:lys__L_e --> lys__L_c,,,-0.030927835051546504
+ADSS:asp__L_c + gtp_c + imp_c --> dcamp_c + gdp_c + 2.0 h_c + pi_c,0.27083333333333326,-0.022727272727272707,-0.030927835051546504
+DmPalm:hdca_c --> hdca_e,,,-0.05263157894736836
+FUMAC:4fumacac_c + h2o_c --> acac_c + fum_c + h_c,,,-0.0869565217391306
+MTHFCm:10fthf_m + h_m --> h2o_m + methf_m,,,-0.0869565217391306
+TYRTA:akg_c + tyr__L_c --> 34hpp_c + glu__L_c,-0.09756097560975618,0.6808510638297873,-0.09589041095890405
+34HPPOR:34hpp_c + o2_c --> co2_c + hgentis_c,,,-0.09756097560975618
+AACOAT:acac_c + atp_c + coa_c --> aacoa_c + amp_c + ppi_c,,,-0.09756097560975618
+TKT1_f:r5p_c + xu5p__D_c --> g3p_c + s7p_c,,,-0.098901098901099
+TKT2_f:e4p_c + xu5p__D_c --> f6p_c + g3p_c,-0.012658227848101111,0.2405063291139241,-0.098901098901099
+NDPK3_b:atp_c + cdp_c --> adp_c + ctp_c,,,-0.098901098901099
+GLUTCOADHm:fad_m + glutcoa_m + h_m --> b2coa_m + co2_m + fadh2_m,,,-0.10000000000000009
+CARN160t_m:crn_m + pmtcrn_c --> crn_c + pmtcrn_m,,,-0.10000000000000009
+GLUt2m:glu__L_c + h_c --> glu__L_m + h_m,,,-0.10000000000000009
+DPGase:23dpg_c + h2o_c --> 3pg_c + pi_c,,,-0.10000000000000009
+DPGM:13dpg_c --> 23dpg_c + h_c,0.09999999999999998,-0.23711340206185572,-0.10000000000000009
+PGL:6pgl_c + h2o_c --> 6pgc_c + h_c,,,-0.10000000000000009
+PGI:g6p_c --> f6p_c,-0.19999999999999996,-0.47727272727272707,-0.10000000000000009
+THD1m:h_c + nadh_m + nadp_m --> h_m + nad_m + nadph_m,,,-0.10000000000000009
+r0465_1:4abut_c + atp_c + his__L_c --> HC00576_c + amp_c + 2.0 h_c + ppi_c,,,-0.12244897959183665
+GTHS:atp_c + glucys_c + gly_c --> adp_c + gthrd_c + h_c + pi_c,,,-0.12244897959183665
+IZPN:4izp_c + h2o_c --> forglu_c + h_c,,,-0.12244897959183665
+CYSTGL:cyst__L_c + h2o_c --> 2obut_c + cys__L_c + nh4_c,,,-0.12244897959183665
+PCm:atp_m + hco3_m + pyr_m --> adp_m + h_m + oaa_m + pi_m,,,-0.12244897959183665
+HKYNH:h2o_c + hLkynr_c --> 3hanthrn_c + ala__L_c,,,-0.12244897959183665
+URIDK2r:adp_c + dudp_c --> atp_c + dump_c,,,-0.125
+GLUCYS:atp_c + cys__L_c + glu__L_c --> adp_c + glucys_c + h_c + pi_c,,,-0.13636363636363624
+PYK:adp_c + h_c + pep_c --> atp_c + pyr_c,,,-0.17021276595744683
+SPODMm:2.0 h_m + 2.0 o2s_m --> h2o2_m + o2_m,,,-0.17021276595744683
+3SALATAi:3sala_c + akg_c + h_c --> 3snpyr_c + glu__L_c,,,-0.17021276595744683
+ADK1:amp_c + atp_c --> 2.0 adp_c,,,-0.17021276595744683
+LEUtec_r:leu__L_e --> leu__L_c,,,-0.17021276595744683
+METtec_r:met__L_e --> met__L_c,,,-0.17021276595744683
+ILEtec_r:ile__L_e --> ile__L_c,,,-0.17021276595744683
+NDPK2:atp_c + udp_c --> adp_c + utp_c,,,-0.17021276595744683
+HDCAt:hdca_e --> hdca_c,,,-0.17647058823529416
+GLYAMDTRc:arg__L_c + gly_c --> gudac_c + orn_c,0.042553191489361764,0.2222222222222222,-0.17647058823529416
+CHLSTI_1:zymst_c --> chlstol_c,,,-0.17647058823529416
+ASPTAm:glu__L_m + oaa_m --> akg_m + asp__L_m,,,-0.19999999999999996
+carnitineAcylTransferaseI:crn_c + ptth_c --> coa_c + pmtcrn_c,,,-0.19999999999999996
+AcetoacetylACPsynthesis:acACP_c + malACP_c --> ACP_c + HC01587_c + co2_c,,,-0.19999999999999996
+DmAla:ala__L_c --> ala__L_e,0.4,0.04761904761904767,-0.19999999999999996
+SUCD1m:fad_m + succ_m --> fadh2_m + fum_m,,,-0.19999999999999996
+ME2:mal__L_c + nadp_c --> co2_c + nadph_c + pyr_c,0.0,0.0,-0.19999999999999996
+r0691:HC01587_c + h_c + nadph_c --> R_3_hydroxybutanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+r0682:but_2_enoyl_ACP_c + h_c + nadph_c --> butyryl_ACP_c + nadp_c,,,-0.19999999999999996
+r0681:R_3_hydroxybutanoyl_ACP_c --> but_2_enoyl_ACP_c + h2o_c,,,-0.19999999999999996
+MCAT:ACP_c + malcoa_c --> coa_c + malACP_c,,,-0.19999999999999996
+FA160ACPH:h2o_c + hexadecanoyl_ACP_c --> ACP_c + hdca_c,,,-0.19999999999999996
+r0764:hexanoyl_ACP_c + malACP_c --> 3_oxooctanoyl_ACP_c + ACP_c + co2_c,,,-0.19999999999999996
+PGCD:3pg_c + nad_c --> 3php_c + h_c + nadh_c,0.0,0.5454545454545454,-0.19999999999999996
+r0773:2E_hexadecenoyl_ACP_c + h_c + nadph_c --> hexadecanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+r0772:malACP_c + tetradecanoyl_ACP_c --> 3_oxohexadecanoyl_ACP_c + ACP_c + co2_c,,,-0.19999999999999996
+r0771:2E_tetradecenoyl_ACP_c + h_c + nadph_c --> nadp_c + tetradecanoyl_ACP_c,,,-0.19999999999999996
+r0770:D_3_hydroxydodecanoyl_ACP_c --> 2E_dodecenoyl_ACP_c + h2o_c,,,-0.19999999999999996
+r0769:3_oxododecanoyl_ACP_c + h_c + nadph_c --> D_3_hydroxydodecanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+r0768:decanoyl_ACP_c + malACP_c --> 3_oxododecanoyl_ACP_c + ACP_c + co2_c,,,-0.19999999999999996
+r0767:2E_decenoyl_ACP_c + h_c + nadph_c --> decanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+r0766:malACP_c + octanoyl_ACP_c --> 3_oxodecanoyl_ACP_c + ACP_c + co2_c,,,-0.19999999999999996
+r0765:2E_octenoyl_ACP_c + h_c + nadph_c --> nadp_c + octanoyl_ACP_c,,,-0.19999999999999996
+r0692:3_oxodecanoyl_ACP_c + h_c + nadph_c --> R_3_hydroxydecanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+r0763:2E_hexenoyl_ACP_c + h_c + nadph_c --> hexanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+r0762:D_3_hydroxyhexanoyl_ACP_c --> 2E_hexenoyl_ACP_c + h2o_c,,,-0.19999999999999996
+r0761:3_oxohexanoyl_ACP_c + h_c + nadph_c --> D_3_hydroxyhexanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+carnitineAcylTransferaseII:coa_m + pmtcrn_m --> crn_m + ptth_m,,,-0.19999999999999996
+r0760:butyryl_ACP_c + malACP_c --> 3_oxohexanoyl_ACP_c + ACP_c + co2_c,,,-0.19999999999999996
+r0702:HMA_c --> 2E_tetradecenoyl_ACP_c + h2o_c,,,-0.19999999999999996
+r0693:R_3_hydroxydecanoyl_ACP_c --> 2E_decenoyl_ACP_c + h2o_c,,,-0.19999999999999996
+r0694:3_oxooctanoyl_ACP_c + h_c + nadph_c --> R_3_hydroxyoctanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+r0695:R_3_hydroxyoctanoyl_ACP_c --> 2E_octenoyl_ACP_c + h2o_c,,,-0.19999999999999996
+r0696:3_oxohexadecanoyl_ACP_c + h_c + nadph_c --> R_3_hydroxypalmitoyl_ACP_c + nadp_c,,,-0.19999999999999996
+r0713:dodecanoyl_ACP_c + malACP_c --> 3_oxotetradecanoyl_ACP_c + ACP_c + co2_c,,,-0.19999999999999996
+FASN:ACP_c + accoa_c --> acACP_c + coa_c,,,-0.19999999999999996
+r0701:3_oxotetradecanoyl_ACP_c + h_c + nadph_c --> HMA_c + nadp_c,,,-0.19999999999999996
+r0697:R_3_hydroxypalmitoyl_ACP_c --> 2E_hexadecenoyl_ACP_c + h2o_c,,,-0.19999999999999996
+r0712:2E_dodecenoyl_ACP_c + h_c + nadph_c --> dodecanoyl_ACP_c + nadp_c,,,-0.19999999999999996
+PHEtec_r:phe__L_e --> phe__L_c,,,-0.19999999999999996
+ATPtm:adp_c + atp_m --> adp_m + atp_c,,,-0.21212121212121215
+MTHFC_b:h2o_c + methf_c --> 10fthf_c + h_c,,,-0.21212121212121215
+GLUN:gln__L_c + h2o_c --> glu__L_c + nh4_c,,,-0.23711340206185572
+MEVK1:atp_c + mev__R_c --> 5pmev_c + adp_c + h_c,,,-0.23711340206185572
+GRTT:grdp_c + ipdp_c --> frdp_c + ppi_c,,,-0.25
+NDPK8:atp_c + dadp_c --> adp_c + datp_c,,,-0.25
+NDPK4:atp_c + dtdp_c --> adp_c + dttp_c,,,-0.25
+DMATT:dmpp_c + ipdp_c --> grdp_c + ppi_c,,,-0.25
+r0962:fol_c --> fol_m,0.2222222222222222,-0.4444444444444444,-0.25
+MTHFDm:methf_m + nadph_m --> mlthf_m + nadp_m,,,-0.25
+ACACT1m:aacoa_m + coa_m --> 2.0 accoa_m,,,-0.26315789473684204
+CSm:accoa_m + h2o_m + oaa_m --> cit_m + coa_m + h_m,,,-0.26315789473684204
+MCCCrm:3mb2coa_m + atp_m + hco3_m --> 3mgcoa_m + adp_m + h_m + pi_m,,,-0.26315789473684204
+PCLAD:cmusa_c + h_c --> am6sa_c + co2_c,,,-0.2790697674418605
+r0643:2mop_m + h2o_m + nad_m --> HC00900_m + 2.0 h_m + nadh_m,,,-0.29032258064516125
+ASNS1:asp__L_c + atp_c + gln__L_c + h2o_c --> amp_c + asn__L_c + glu__L_c + h_c + ppi_c,,,-0.30000000000000004
+ME1m:mal__L_m + nad_m --> co2_m + nadh_m + pyr_m,-0.030927835051546504,-0.10000000000000009,-0.30000000000000004
+GDHm:glu__L_m + h2o_m + nad_m --> akg_m + h_m + nadh_m + nh4_m,,,-0.30000000000000004
+GHMT2rm:ser__L_m + thf_m --> gly_m + h2o_m + mlthf_m,,,-0.30000000000000004
+3HBCDm:b2coa_m + h2o_m --> 3hbcoa__R_m,,,-0.30000000000000004
+LNSTLS:Ssq23epx_c --> lanost_c,,,-0.31868131868131866
+ME2m:mal__L_m + nadp_m --> co2_m + nadph_m + pyr_m,0.0,0.0,-0.3265306122448979
+ACOAD8m:fad_m + ivcoa_m --> 3mb2coa_m + fadh2_m,,,-0.3265306122448979
+GK1:atp_c + gmp_c --> adp_c + gdp_c,,,-0.3265306122448979
+MCPST:cyan_c + mercppyr_c --> h_c + pyr_c + tcynt_c,,,-0.3829787234042552
+GTHOm:gthox_m + h_m + nadph_m --> 2.0 gthrd_m + nadp_m,,,-0.3829787234042552
+MTHFR3:2.0 h_c + mlthf_c + nadph_c --> 5mthf_c + nadp_c,,,-0.3829787234042552
+r0514:fol_m + nadph_m --> dhf_m + nadp_m,0.18604651162790697,-0.26582278481012644,-0.3829787234042552
+DHFRim:dhf_m + h_m + nadph_m --> nadp_m + thf_m,,,-0.3829787234042552
+ARGSL:argsuc_c --> arg__L_c + fum_c,0.27083333333333326,-0.3157894736842106,-0.3829787234042552
+PSERT:3php_c + glu__L_c --> akg_c + pser__L_c,,,-0.3999999999999999
+GLUNm:gln__L_m + h2o_m --> glu__L_m + nh4_m,,,-0.3999999999999999
+FTHFDH:10fthf_c + h2o_c + nadp_c --> co2_c + h_c + nadph_c + thf_c,,,-0.3999999999999999
+AKGDm:akg_m + coa_m + nad_m --> co2_m + nadh_m + succoa_m,0.0,0.0,-0.3999999999999999
+SUCOAS1m_f:gdp_m + pi_m + succoa_m --> coa_m + gtp_m + succ_m,,,-0.41176470588235303
+FTHFLi:atp_c + for_c + thf_c --> 10fthf_c + adp_c + pi_c,,,-0.41414141414141414
+GHMT3:3htmelys_c + h_c --> 4tmeabut_c + gly_c,,,-0.44329896907216515
+P5CR:1pyr5c_c + 2.0 h_c + nadph_c --> nadp_c + pro__L_c,,,-0.44329896907216515
+DHFR:dhf_c + h_c + nadph_c --> nadp_c + thf_c,,,-0.44329896907216515
+FOLR2:fol_c + nadph_c --> dhf_c + nadp_c,0.13978494623655924,-0.26582278481012644,-0.44329896907216515
+FADH2ETC:fadh2_m + q10_m --> fad_m + q10h2_m,,,-0.44329896907216515
+PRO1x:1pyr5c_c + 2.0 h_c + nadh_c --> nad_c + pro__L_c,,,-0.44329896907216515
+METAT:atp_c + h2o_c + met__L_c --> amet_c + pi_c + ppi_c,,,-0.4583333333333335
+CE2705t:CE2705_c --> CE2705_e,,,-0.4583333333333335
+PFK:atp_c + f6p_c --> adp_c + fdp_c + h_c,,,-0.4736842105263157
+GLCt1_r:glc__D_e --> glc__D_c,,,-0.4736842105263157
+GDRm:gthox_m + h_m + nadh_m --> 2.0 gthrd_m + nad_m,,,-0.5
+MTHFD:methf_c + nadph_c --> mlthf_c + nadp_c,,,-0.5
+ADMDC:amet_c + h_c --> ametam_c + co2_c,,,-0.5
+PRPPS:atp_c + r5p_c --> amp_c + h_c + prpp_c,,,-0.5
+r2420:h_c + pi_c --> h_m + pi_m,,,-0.5217391304347827
+GACMTRc:amet_c + gudac_c --> ahcys_c + creat_c + h_c,,,-0.5306122448979591
+CKc_cho:atp_c + creat_c --> adp_c + h_c + pcreat_c,,,-0.5306122448979591
+PROPAT4te_r:pro__L_e --> pro__L_c,,,-0.5384615384615385
+TMABADH:4tmeabut_c + h2o_c + nad_c --> 4tmeabutn_c + 2.0 h_c + nadh_c,,,-0.5625
+FTHFLmi:atp_m + for_m + thf_m --> 10fthf_m + adp_m + pi_m,,,-0.5625
+ICDHxm:icit_m + nad_m --> akg_m + co2_m + nadh_m,,,-0.6000000000000001
+PDHm:coa_m + nad_m + pyr_m --> accoa_m + co2_m + nadh_m,0.042553191489361764,0.14634146341463405,-0.6494845360824744
+HIStiDF_r:his__L_e --> his__L_c,,,-0.6494845360824744
+METS:5mthf_c + hcys__L_c --> h_c + met__L_c + thf_c,0.0,0.0,-0.6666666666666667
+2OXOADPTm:2oxoadp_c + akg_m --> 2oxoadp_m + akg_c,,,-0.6666666666666667
+PSP_L:h2o_c + pser__L_c --> pi_c + ser__L_c,,,-0.7
+SERD_L:ser__L_c --> nh4_c + pyr_c,0.0,0.27083333333333326,-0.7
+ASPGLUm:asp__L_m + glu__L_c + h_c --> asp__L_c + glu__L_m + h_m,,,-0.8
+3HBCOAHLm:3hibutcoa_m + h2o_m --> 3hmp_m + coa_m + h_m,,,
+3MOBt2im:3mob_c + h_c --> 3mob_m + h_m,,,
+3MOPt2im:3mop_c + h_c --> 3mop_m + h_m,,,
+3SPYRSP:3snpyr_c + h2o_c --> h_c + pyr_c + so3_c,,,
+3SPYRSPm:3snpyr_m + h2o_m --> h_m + pyr_m + so3_m,,,
+4MOPt2im:4mop_c + h_c --> 4mop_m + h_m,,,
+AASAD3m:L2aadp6sa_m + h2o_m + nad_m --> L2aadp_m + 2.0 h_m + nadh_m,,,
+ABUTD:4abutn_c + h2o_c + nad_c --> 4abut_c + 2.0 h_c + nadh_c,,,
+AM6SAD:am6sa_c + h2o_c + nad_c --> amuco_c + 2.0 h_c + nadh_c,,,
+AMCOXO:amuco_c + h2o_c + h_c + nadph_c --> 2oxoadp_c + nadp_c + nh4_c,,,
+ANTHte:anth_c --> anth_e,,,
+ARGDr:arg__L_c + h2o_c --> citr__L_c + nh4_c,,,
+ATPM:atp_c + h2o_c --> adp_c + h_c + pi_c,,,
+Biomass:0.505626 ala__L_c + 0.35926 arg__L_c + 0.279425 asn__L_c + 0.352607 asp__L_c + 20.704451 atp_c + 0.020401 chsterol_c + 0.039036 ctp_c + 0.046571 cys__L_c + 0.013183 datp_c + 0.009442 dctp_c + 0.009898 dgtp_c + 0.013091 dttp_c + 0.275194 g6p_c + 0.325996 gln__L_c + 0.385872 glu__L_c + 0.538891 gly_c + 0.036117 gtp_c + 20.650823 h2o_c + 0.271039 hdca_c + 0.126406 his__L_c + 0.286078 ile__L_c + 0.545544 leu__L_c + 0.592114 lys__L_c + 0.153018 met__L_c + 0.259466 phe__L_c + 0.412484 pro__L_c + 0.392525 ser__L_c + 0.31269 thr__L_c + 0.013306 trp__L_c + 0.159671 tyr__L_c + 0.053446 utp_c + 0.352607 val__L_c --> BIOMASSA_c + 20.650823 adp_c + 20.650823 h_c + 20.650823 pi_c,,,
+CMPuptake_r:cmp_e --> cmp_c,,,
+CO2t:co2_c --> co2_e,,,
+CO2tm_b:co2_m --> co2_c,,,
+CO2tm_f:co2_c --> co2_m,,,
+CRTNsyn_cho:pcreat_c --> crtn_c + pi_c,,,
+CRTNtr:crtn_c --> crtn_e,,,
+CYANt_r:cyan_e --> cyan_c,,,
+CystineGSH:Lcystin_c + 2.0 gthrd_c --> 2.0 cys__L_c + gthox_c,,,
+CystinePyruvate:Lcystin_c + h2o_c --> nh4_c + pyr_c,,,
+CystineReductaseNADH:Lcystin_c + h_c + nadh_c --> 2.0 cys__L_c + nad_c,,,
+DHAPtm:dhap_m --> dhap_c,,,
+DKMPPD:dkmpp_c + h2o_c + o2_c --> 2kmb_c + for_c + 2.0 h_c + pi_c,,,
+DM_asp__L_e:asp__L_e --> ,,,
+DSMSTOLR:dsmsterol_c + h_c + nadph_c --> chsterol_c + nadp_c,,,
+DTMPK:atp_c + dtmp_c --> adp_c + dtdp_c,,,
+Dm2oxobutyrate:2obut_c --> 2obut_e,,,
+DmBiomass:BIOMASSA_c --> BIOMASSA_e,,,
+DmGSSG:gthox_m --> gthox_e,-0.030927835051546504,,
+EXRiboflavin:ribflv_e --> ribflv_c,,,
+EX_2obut_e:2obut_e --> ,,,
+EX_3hydroxybutanoatex_r: --> CE5126_e,,,
+EX_4abut:4abut_e --> ,,,
+EX_5mthf_e:5mthf_e --> ,,,
+EX_CE2705_e:CE2705_e --> ,,,
+EX_HC00576:HC00576_e --> ,,,
+EX_ala_B:ala_B_e --> ,,,
+EX_ala__L_e_b: --> ala__L_e,,,
+EX_ala__L_e_f:ala__L_e --> ,,,
+EX_anth_e:anth_e --> ,,,
+EX_arg__L_e_r: --> arg__L_e,,,
+EX_asn__L_e: --> asn__L_e,,,
+EX_asp__L_e: --> asp__L_e,,,
+EX_biomassx:BIOMASSA_e --> ,,,
+EX_carn_e_r: --> carn_e,,,
+EX_cmp_e_r: --> cmp_e,,,
+EX_co2_e:co2_e --> ,,,
+EX_crn_e:crn_e --> ,,,
+EX_crtn_e:crtn_e --> ,,,
+EX_csn_e_r: --> csn_e,,,
+EX_cyan_e_r: --> cyan_e,,,
+EX_cys__L_e: --> cys__L_e,,,
+EX_cystinex_r: --> Lcystin_e,,,
+EX_fol_e_r: --> fol_e,,,
+EX_glc__D_e_r: --> glc__D_e,,,
+EX_gln__L_e_r: --> gln__L_e,,,
+EX_gluIN__L_e: --> glu__L_e,,,
+EX_gluOUT__L_e:glu__L_e --> ,,,
+EX_gly_e_r: --> gly_e,,,
+EX_gthox_e:gthox_e --> ,,,
+EX_gthrd_e_r: --> gthrd_e,,,
+EX_gudac_e:gudac_e --> ,,,
+EX_h2o_e_b: --> h2o_e,,,
+EX_h2o_e_f:h2o_e --> ,,,
+EX_h_e_b: --> h_e,,,
+EX_h_e_f:h_e --> ,,,
+EX_hdca_e_b: --> hdca_e,,,
+EX_hdca_e_f:hdca_e --> ,,,
+EX_his__L_e_r: --> his__L_e,,,
+EX_ile__L_e_r: --> ile__L_e,,,
+EX_lac__L_e:lac__L_e --> ,,,
+EX_leu__L_e_r: --> leu__L_e,,,
+EX_lys__L_e_r: --> lys__L_e,,,
+EX_met__L_e_r: --> met__L_e,,,
+EX_nh4_e:nh4_e --> ,,,
+EX_o2_e_r: --> o2_e,,,
+EX_octanoyl_ACP: --> octanoyl_ACP_e,,,
+EX_phe__L_e_r: --> phe__L_e,,,
+EX_pi_e_r: --> pi_c,,,
+EX_pro__L_e: --> pro__L_e,,,
+EX_ptrcIN_e: --> ptrc_e,,,
+EX_ptrcOUT_e:ptrc_e --> ,,,
+EX_pyr_e: --> pyr_e,,,
+EX_ribflv_e:ribflv_e --> ,,,
+EX_ser__L_e_r: --> ser__L_e,,,
+EX_so3_e:so3_e --> ,,,
+EX_spmd_e:spmd_e --> ,,,
+EX_sprm_e:sprm_e --> ,,,
+EX_tcynt_e:tcynt_e --> ,,,
+EX_tcyntc:tcynt_c --> ,,,
+EX_thbpt_e_r: --> thbpt_e,,,
+EX_thr__L_e_r: --> thr__L_e,,,
+EX_thymd: --> thymd_e,,,
+EX_tmlys_e_r: --> tmlys_e,,,
+EX_trp__L_e_r: --> trp__L_e,,,
+EX_tyr__L_e_r: --> tyr__L_e,,,
+EX_ump_e_r: --> ump_e,,,
+EX_urea_e:urea_e --> ,,,
+EX_val__L_e_r: --> val__L_e,,,
+Ex3HB:CE5126_e + h_e --> CE5126_c + h_c,,,
+ExCystineGlu:Lcystin_e + glu__L_c --> Lcystin_c + glu__L_e,,,
+ExCystineSer:Lcystin_e + ser__L_c --> Lcystin_c + ser__L_e,,,
+ExSulfitem:so3_m --> so3_e,,,
+FKYNH:5hoxnfkyn_c + h2o_c --> Lkynr_c + for_c + h_c,,,
+FORtm_r:for_c --> for_m,,,
+G3PDm:fad_m + glyc3p_m --> dhap_m + fadh2_m,,,
+GLNtm_1:gln__L_c + h_c --> gln__L_m + h_m,,,
+GLU5SAtmc_b:glu5sa_c --> glu5sa_m,-0.41176470588235303,,
+GLU5SAtmc_f:glu5sa_m --> glu5sa_c,0.1578947368421053,,
+GLUDC:glu__L_c + h_c --> 4abut_c + co2_c,,,
+GLYC3Ptm:glyc3p_c --> glyc3p_m,0.0625,,
+GLYtm_r:gly_m --> gly_c,-0.3999999999999999,,
+GTHRDt2_r:gthrd_e --> gthrd_c,,,
+GUDACtr2:gudac_c --> gudac_e,,,
+GluForTx:forglu_c + h2o_c + thf_c --> 5forthf_c + glu__L_c,,,
+HACD1m:3hbcoa__R_m + nad_m --> aacoa_m + h_m + nadh_m,,,
+HMGCOAtm:hmgcoa_m --> hmgcoa_c,,,
+HMR_3915:amet_c + thf_c --> 5mthf_c + ahcys_c,,,
+HMR_3951:so3_c --> so3_e,,,
+ILEtmi:ile__L_c --> ile__L_m,,,
+LEUt5m:leu__L_c --> leu__L_m,0.2857142857142858,,
+MLTHFtm_r:mlthf_m --> mlthf_c,-0.5217391304347827,,
+MMALH:HC00900_m + coa_m --> h2o_m + mmcoa__S_m,,,
+MMTSADm:2mop_m + coa_m + nad_m --> h_m + mmcoa__R_m + nadh_m,,,
+MTRI:5mdr1p_c --> 5mdru1p_c,,,
+MetSynthesis:2kmb_c + gln__L_c + 2.0 h_c --> glu__L_c + met__L_c,,,
+NH4t:nh4_c --> nh4_e,,,
+NH4tm_b:nh4_m --> nh4_c,,,
+NH4tm_f:nh4_c --> nh4_m,,,
+O2t_r:o2_e --> o2_c,,,
+O2tm:o2_c --> o2_m,,,
+OBDHc:2obut_c + coa_c + nad_c --> co2_c + nadh_c + ppcoa_c,,,
+OCBTm:cbp_m + orn_m --> citr__L_m + h_m + pi_m,,,
+PCC:atp_m + hco3_m + ppcoa_m --> adp_m + h_m + mmcoa__S_m + pi_m,,,
+PHETHPTOX2:o2_c + phe__L_c + thbpt_c --> CE2705_c + h2o_c + tyr__L_c,,,
+PHLACHt_b:h_e --> h_c,,,
+PHLACHt_f:h_c --> h_e,,,
+PPCOAtm:ppcoa_c --> ppcoa_m,0.0,,
+PROD2:fad_c + pro__L_c --> 1pyr5c_c + fadh2_c + h_c,,,
+PTRCtex2_b:ptrc_e --> ptrc_c,,,
+PTRCtex2_f:ptrc_c --> ptrc_e,,,
+RE2410C:ddsmsterol_c + h_c + nadph_c --> dsmsterol_c + nadp_c,,,
+SPMDtex2:spmd_c --> spmd_e,,,
+SPRMti:sprm_c --> sprm_e,,,
+TCYNTt:tcynt_c --> tcynt_e,,,
+THBPTt_r:thbpt_e --> thbpt_c,,,
+THRD_L:thr__L_c --> 2obut_c + nh4_c,,,
+TMLYStd_r:tmlys_e --> tmlys_c,,,
+TRPO2:o2_c + trp__L_c --> 5hoxnfkyn_c,,,
+Transport3HB_forward:CE5126_c + h_c --> CE5126_m + h_m,,,
+TransportFAD:fad_m + fadh2_c --> fad_c + fadh2_m,,,
+Transport_4abut_c_e:4abut_c --> 4abut_e,0.0,,
+Transport_HC00576_c_e:HC00576_c --> HC00576_e,,,
+Transport_ala_B_c_e:ala_B_c --> ala_B_e,,,
+Transport_octanoyl_ACP_c_e:octanoyl_ACP_e --> octanoyl_ACP_c,,,
+UMPuptake_r:ump_e --> ump_c,,,
+UNK3:2kmb_c + glu__L_c --> akg_c + met__L_c,,,
+VALt5m:val__L_c --> val__L_m,0.6666666666666667,,
+bAlaSynthesis:csn_c + 3.0 h2o_c + 3.0 h_c + nadph_c --> ala_B_c + co2_c + nadp_c + 2.0 nh4_c,,,
+bBDH:CE5126_m + nad_m --> acac_m + h_m + nadh_m,,,
+r1435:ser__L_c --> ser__L_m,0.19999999999999996,,
