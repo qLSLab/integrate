@@ -64,7 +64,7 @@ To this aim, we propose a computational pipeline to characterize the landscape o
   * ysiFileName: the input extracellular flux ratio dataset. This file consists of the following columns: "Ratio" listing the extracellular flux ratios to impose within the model; n columns for each cell line listing for each extracellular flux ratio the corresponding value in each replica. Default value: 'ysi_ratio.csv'.
   * mediumFileName: the input nutrients availability dataset. This file consists of the following columns: "Rxn" listing nutrients uptaken within the model; two columns for each cell line listing for each nutrient the corresponding lower bound (cell line + _LB) and upper bound (cell line + _UB). Default value: 'medium.csv'.
   * modelId: the input model name. Default value: 'ENGRO2'.
-  * lcellLines: list of input sample names: Default value: ['MCF102A', 'SKBR3', 'MCF7', 'MDAMB231', 'MDAMB361'].
+  * lcellLines: list of input sample names: Default value: ['MCF102A',  'MDAMB231','SKBR3', 'MCF7', 'MDAMB361'].
   * biomassRxn: biomass reaction name. Default value: 'Biomass'.
   * lacRxn: the lactate demand reaction. Default value: 'EX_lac__L_e'.
   * glcRxn: the glucose uptake reaction. Default value: 'EX_glc__D_e'.
@@ -84,7 +84,7 @@ To this aim, we propose a computational pipeline to characterize the landscape o
   * nSamples: number of solutions to sample for each batch
   Users may decided to leave the following inputs associated to their default values or set them as preferred:
     * biomassRxn: biomass reaction name. Default value: 'Biomass'.
-    * lcellLines: list of input sample names: Default value: ['MCF102A', 'SKBR3', 'MCF7', 'MDAMB231', 'MDAMB361'].
+    * lcellLines: list of input sample names: Default value: ['MCF102A',  'MDAMB231'. 'SKBR3', 'MCF7', 'MDAMB361'].
     * modelId: the input model name. Default value: 'ENGRO2'.
     * ysiFileName: the input extracellular flux ratio dataset. This file consists of the following columns: *Ratio* listing the extracellular flux ratios to impose within the model; n columns for each cell line listing for each extracellular flux ratio the corresponding value in each replica. Default value: 'ysi_ratio.csv'.
     * lacRxn: the lactate demand reaction. Default value: 'EX_lac__L_e'.
@@ -151,13 +151,11 @@ To this aim, we propose a computational pipeline to characterize the landscape o
   * meansFile: output file of Step 9. Default value: 'medie_Met.csv'
   * eps: a very close to 0 value to avoid undefined ratios. Default value: 0.00001.
 * Output:
-  * A dataset of concordance analysis (Cohen coefficient and pearson correlation) of RPS vs RAS, RPS vs LM, RPS vs RAS
+  * A dataset of concordance analysis (Cohen coefficient and pearson correlation) of RPS vs RAS, RPS vs FFD, RPS vs FFD, the pvalues and the adjusted pvalues
   * Heatmap showing the RPS vs RAS and the RPS vs FFD concordance scores, for reactions having a level of concordance between RPS and FFD greater than 0.2.
-  * Heatmap showing the RPS vs RAS and the RPS vs FFD concordance scores, for reactions having a level of concordance between RPS and FFD or RPS and RAS
   greater than 0.2.
   * A scatterplot showing RPS vs FFD (x-axis) and the RPS vs RAS (y-axis) scores of the metabolic reactions for which quantification of all substrate
 abundances was available.
-  * Scatterplot of average FFD log2-fold change vs average RPS log2-fold change for ACONT reaction.
   * Normalized average RPS and median FFD for all the reactions for which quantification of all substrate abundances was available.
 
 ## Getting Help
