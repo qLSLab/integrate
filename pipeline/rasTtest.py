@@ -15,7 +15,7 @@ OUTDIR = workingDirs[2]
 MODELDIR = workingDirs[3]
 
 # setting input data
-lcellLines = ['MCF102A', 'SKBR3', 'MCF7', 'MDAMB231', 'MDAMB361']
+lcellLines = ['MCF102A','MDAMB231','MDAMB361','MCF7','SKBR3']
 rasScoreFile = 'ENGRO2_RAS'
 
 ## According to the splitted reactions in the irreversible models, the corresponding RAS scores are duplicated to consider both the forward and the backward reaction

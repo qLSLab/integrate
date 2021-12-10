@@ -59,7 +59,7 @@ GPR_reactions=[reaction.id for reaction in model.reactions if reaction.gene_reac
 datasetsFBA=list()
 datasetsRAS=list()
 for test in tests:
-    datasetsFBA.append(pd.read_csv(os.path.join(OUTDIR, mwuTestFile + test[0] + '_vs_' + test[1] + '_sample100000Tot.csv'),
+    datasetsFBA.append(pd.read_csv(os.path.join(OUTDIR, mwuTestFile + test[0] + '_vs_' + test[1] + '.csv'),
                                 sep="\t",index_col=0).sort_index())
     datasetsRAS.append(pd.read_csv(os.path.join(OUTDIR, rasFile + test[0] + '_vs_' + test[1] + '.csv'),
                                 sep="\t",index_col=0).loc[GPR_reactions])
@@ -130,7 +130,7 @@ from statsmodels.distributions.empirical_distribution import ECDF
 from scipy.stats import kstest 
 from statsmodels.graphics.gofplots import qqplot_2samples
 
-ntest = 1000
+ntest = 100
 
 dfConcFRD_FBAvsMET=pd.DataFrame(index=index_commonMETvsFBA,columns=[str(i) for i in range(ntest)])
 dfConcMETvsFBA=pd.DataFrame(index=index_commonMETvsFBA,columns=["METvsFBA"])
@@ -236,56 +236,6 @@ for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
 
 
 fig.savefig(os.path.join(FIGUREDIR, "qqplotEngro2.png"),transparent=False,format="png")
-
-###consider recon3d concordance on RPS vs FFD
-df=pd.read_csv("npy_csv_Recon/Recon3D_risultatiFlux_20211130_MRY_wYieldMagnitude.csv",index_col=0).iloc[:,0:10]#.mean(1)
-df=df.mean(1)
-df=df.sort_values(ascending=False)#.values
-
-###recon3d
-dfConcMETvsFBA=dfConcMETvsFBA.sort_values(by=dfConcMETvsFBA.columns[0],ascending=True)
-#d#ict_pvaluesMETvsFBArecon3d=dict()
-
-#valori=df.values
-#pvaluesRPSvsFBArecon3d=[1-ecdfRPSvsFBA(el[0]) for el in valori]
-#resultsRPSvsFBA_correction_recon3d=fdrcorrection(pvaluesRPSvsFBArecon3d,0.05)
-#res=resultsRPSvsFBA_correction_recon3d[1]
-
-#d#fRecon3D=pd.DataFrame(index=df.index,columns=["pvalue","adj-pvalue"])
-
-#i=0
-#for el in df.index:
-#    dfRecon3D.loc[el,"adj-pvalue"]=res[i]
-#    i=i+1
-
-    
-fig, ax=plt.subplots(1,1,figsize=(20, 10))
-
-
-#matplotlib.rc('font', **font)
-
-qqplot_2samples(dfConcFRD_FBAvsMET.values.ravel(),
-                     df.values,
-                    ylabel="Agreement by chance",
-                    xlabel="INTEGRATE agreement",
-                    line="45",
-                    ax=ax)
-#ax.set_xlabel("Original distribution of Kappa Cohen",fontsize=20)
-#ax.set_ylabel("Original distribution of Kappa Cohen",fontsize=20)
-ax.set_xlim([-1,1])
-ax.set_ylim([-1,1])
-ax.grid()
-ax.set_title("RPSvsFFD ")
-
-for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
-             ax.get_xticklabels() + ax.get_yticklabels()):
-    item.set_fontsize(30)
-
-
-fig.savefig(os.path.join(FIGUREDIR, "qqplotRecon3D.png"),transparent=False,format="png")
-
-
-
 
 
 ######## Cumulative distribution
