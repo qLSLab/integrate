@@ -17,93 +17,83 @@ MODELDIR = workingDirs[3]
 FIGUREDIR = workingDirs[4]
 
 tStampRS = sys.argv[1]
-whichAnalysis = sys.argv[2]
 
-if whichAnalysis == 'save':
-    #### Step 1: SAVE DATA
-    ##### Compute in silico Growth Yield
-    dyield_silico_glc = {}
-    dfMCF102ANet = pd.read_csv(os.path.join(OUTDIR, 'randomSampling_ENGRO2_1000000_MCF102A_' + tStampRS + '.csv'), sep = '\t')
-    dfMCF102ANet['yield_glc'] = dfMCF102ANet['Biomass'] / dfMCF102ANet['EX_glc__D_e_r']
-    yield_glc_mean = dfMCF102ANet['yield_glc'].mean()
-    dyield_silico_glc['MCF102A_A'] = yield_glc_mean
-    dyield_silico_glc['MCF102A_B'] = yield_glc_mean
+## set dictionary for coloring each cell lines within plot
+dColors = {
+    'MCF102A': '#029e73',
+    'SKBR3': '#d55e00',
+    'MCF7': '#cc78bc',
+    'MDAMB231': '#ece133',
+    'MDAMB361': '#0173b2'
+}
 
-    lcellLines = ['SKBR3', 'MCF7','MDAMB231', 'MDAMB361']
-    for c in lcellLines:
-        dfRS = pd.read_csv(os.path.join(OUTDIR, 'randomSampling_ENGRO2_1000000_' + c +'_' + tStampRS + '.csv'), sep = '\t')
-        dfRS['yield_glc'] = dfRS['Biomass'] / dfRS['EX_glc__D_e_r']
-        yield_glc_mean = dfRS['yield_glc'].mean()
-        dyield_silico_glc[c + '_A'] = yield_glc_mean
-        dyield_silico_glc[c + '_B'] = yield_glc_mean
+## compute computational glucose yield
+lcellLines = ['MCF102A', 'SKBR3', 'MCF7','MDAMB231', 'MDAMB361']
 
-    dfyield_silico_glc = pd.DataFrame(dyield_silico_glc.items(), columns = ['cellLine', 'yield_glc_silico'])
+biomassRxnName = 'Biomass'
+glc = 'EX_glc__D_e_r'
+gln = 'EX_gln__L_e_r'
 
-    ##### Compute wet Growth Yield
-    lcellLines = ['MCF102A', 'SKBR3', 'MCF7', 'MDAMB231', 'MDAMB361']
-    dfCellCount = pd.read_csv(os.path.join(RAWDIR, 'cellCounts.csv'), sep = '\t')
-    dfCellCount = dfCellCount.drop(dfCellCount[dfCellCount.Time > 48].index)
-
-    dfProteinContent_w = pd.read_csv(os.path.join(RAWDIR, 'proteinContent.csv'), sep = '\t')
-    dfProteinContent_w = dfProteinContent_w.drop(dfProteinContent_w[dfProteinContent_w.Time > 48].index)
-
-    # dati ricavati stessi tempi del YSI
-    dProtContent = {'MCF102A': [175.7910906298, 110.460829493088], 'SKBR3': [74.7619047619048, 111.305683563748], 'MCF7': [87.926267281106, 87.8648233486943], 'MDAMB231': [95.6374807987711, 89.815668202765], 'MDAMB361': [38.6635944700461, 40.0768049155146]}
-    dGlcConsumption = {'MCF102A': [4.458855544, 4.654227382], 'SKBR3': [2.917178061, 6.764445483], 'MCF7': [2.927506502, 2.958492487], 'MDAMB231': [6.759204908, 6.637699054], 'MDAMB361': [0.414875385, 0.407950783]}
-    dGlnConsumption = {'MCF102A': [1.020263396, 0.969936553], 'SKBR3': [0.418782880, 1.032064126], 'MCF7': [1.219061914, 1.364396060], 'MDAMB231': [1.727965579, 1.560298921], 'MDAMB361': [0.946320027, 0.967281240]}
-
-    dyield_wet_glc = {}
-    for c in lcellLines:
-        dyield_wet_glc[c + '_A'] = ((dProtContent[c][0]*1e-6) / ((dGlcConsumption[c][0]*1e-3) * 180.1559))
-        dyield_wet_glc[c + '_B'] = ((dProtContent[c][1]*1e-6) / ((dGlcConsumption[c][1]*1e-3) * 180.1559))
-
-    dfyield_wGlc = pd.DataFrame(dyield_wet_glc.items(), columns = ['cellLine', 'yield_glc_wet'])
-
-    ## Join the computed wet and computational growth yield
-    dfY_rl = pd.merge(dfyield_silico_glc, dfyield_wGlc, on = 'cellLine')
-    dfY_rl = dfY_rl.set_index('cellLine')
-    dfY_rl.to_csv(os.path.join(OUTDIR, 'yieldOnGlc_rs_' + tStampRS + '.csv'), sep = '\t', index = True)
+dyield_silico_glc_MEDIAN = {}
+for c in lcellLines:
+    print(c)
+    dfRS = pd.read_csv(os.path.join(OUTDIR, 'randomSampling_ENGRO2_nSol_10000_nBatch_0_' + c + '_MediumANDYsiANDRas.csv'), sep = '\t')
+    dfRS['yield_glc'] = (0.131972 * dfRS[biomassRxnName]) / ((dfRS[glc]*1e-3) * 180.1559)
+    yield_glc_median = dfRS['yield_glc'].median()
+    dyield_silico_glc_MEDIAN[c + '_A'] = yield_glc_median
+    dyield_silico_glc_MEDIAN[c + '_B'] = yield_glc_median
 
 
-elif whichAnalysis == 'plot':
-    #### Step 1: PLOT DATA
-    dColors = {
-        'MCF102A': '#FF7F00',
-        'SKBR3': '#0080FF',
-        'MCF7': '#FF0000',
-        'MDAMB231': '#4DAF4A',
-        'MDAMB361': '#CE00FF'
-    }
+dfyield_silico_glc = pd.DataFrame(dyield_silico_glc_MEDIAN.items(), columns = ['cellLine', 'yield_glc_silico'])
+dfyield_silico_glc.to_csv(os.path.join(OUTDIR, 'engro_yield_glc_MEDIAN_' + tStampRS + '.csv'), sep = '\t', index = True)
 
-    ## corr plot metodo linear regression calcolo yield
-    dfY_rl = pd.read_csv(os.path.join(OUTDIR, 'yieldOnGlc_rs_' + tStampRS + '.csv'), sep = '\t', index_col = 0)
-    dfY_rl_corr_np = np.corrcoef(dfY_rl['yield_glc_silico'], dfY_rl['yield_glc_wet'])
+## compute experimental glucose yield
+dProtContent = {'MCF102A': [175.7910906 - 40.84485407, 110.4608295 - 36.09831029], 'SKBR3': [74.76190476 - 45.42242704, 111.3056836 - 27.52688172], 'MCF7': [87.92626728 - 27.88018433, 87.86482335 - 31.1827957], 'MDAMB231': [95.6374808 - 39.46236559, 89.8156682 - 43.0890937], 'MDAMB361': [38.66359447- 27.75729647, 40.07680492 -28.57142857]} # t48-t0 del YSI
+dGlcConsumption = {'MCF102A': [4.458855544, 4.654227382], 'SKBR3': [2.917178061, 6.764445483], 'MCF7': [2.927506502, 2.958492487], 'MDAMB231': [6.759204908, 6.637699054], 'MDAMB361': [0.414875385, 0.407950783]} # la terza misurazione di ogni linea cellulare è la media dei precedenti due
+dGlnConsumption = {'MCF102A': [1.020, 0.970], 'SKBR3': [0.419, 1.032], 'MCF7': [1.219, 1.364], 'MDAMB231': [1.728, 1.560], 'MDAMB361': [0.946, 0.967]} # la terza misurazione di ogni linea cellulare è la media dei precedenti due
 
-    fig = plt.figure(figsize=(15,12))
-    ax = fig.add_subplot(111)
-    ax.set_axisbelow(True)
-    plt.grid(color='w', linestyle='solid')
-    ax.set_facecolor('#eaeaf2')
-    plt.ticklabel_format(axis='y', style='scientific', scilimits=(-4,-4))
-    ax.yaxis.get_offset_text().set_fontsize(40)
-    # hide axis spines
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-    color_dict = dict(dColors)
-    ax = sns.regplot(x='yield_glc_silico', y ='yield_glc_wet', data = dfY_rl, ci = None)
+dyield_wet_glc = {}
+for c in lcellLines:
+    dyield_wet_glc[c + '_A'] = (dProtContent[c][0]*1e-6) / ((dGlcConsumption[c][0]*1e-3) * 180.1559)
+    dyield_wet_glc[c + '_B'] = (dProtContent[c][1]*1e-6) / ((dGlcConsumption[c][1]*1e-3) * 180.1559)
 
-    for row in dfY_rl.itertuples():
-        try:
-            ax.scatter(row.yield_glc_silico, row.yield_glc_wet, marker='o', color = dColors[row.Index[:-2]], label = row.Index[:-2], s = 400)
-        except:
-            ax.scatter(row.yield_glc_silico, row.yield_glc_wet, marker='o', color = dColors[row.Index], label = row.Index, s = 400)
+dfyield_wGlc = pd.DataFrame(dyield_wet_glc.items(), columns = ['cellLine', 'yield_glc_wet'])
 
-    ax.set_title('Correlation = ' + "{:.2f}".format(dfY_rl_corr_np[0,1]), fontsize=55)
-    plt.xlabel('Computational yield',fontsize= 45)
-    plt.ylabel('Experimental yield',fontsize= 45)
-    plt.xlim([min(list(dfY_rl['yield_glc_silico'])) - ((min(list(dfY_rl['yield_glc_silico']))*5)/100), max(list(dfY_rl['yield_glc_silico'])) + ((max(list(dfY_rl['yield_glc_silico']))*2)/100)])
-    plt.xticks(fontsize= 30)
-    plt.yticks(fontsize= 30)
-    plt.legend(fontsize= 30)
-    fig.subplots_adjust(left=0.2)
-    plt.savefig(os.path.join(FIGUREDIR, 'yieldOnGlc_rs_' + tStampRS + '.png'))
+## merge experimental and computational yields and plot results
+dfyield_silico_glc = pd.read_csv(os.path.join(OUTDIR, 'engro_yield_glc_MEDIAN_' + tStampRS + '.csv'), sep = '\t', index_col=0, dtype = {'yield_glc_silico': float, 'cellLine': str})
+dfY_rl = pd.merge(dfyield_silico_glc, dfyield_wGlc, on = 'cellLine')
+dfY_rl = dfY_rl.set_index('cellLine')
+dfY_rl_corr = dfY_rl.corr(method='pearson')
+dfY_rl_corr_np = np.corrcoef(dfY_rl['yield_glc_silico'], dfY_rl['yield_glc_wet'])
+
+fig = plt.figure(figsize=(15,12))
+ax = fig.add_subplot(111)
+ax.set_axisbelow(True)
+plt.grid(color='w', linestyle='solid')
+ax.set_facecolor('#eaeaf2')
+plt.ticklabel_format(axis='y', style='scientific', scilimits=(-4,-4))
+plt.ticklabel_format(axis='x', style='scientific', scilimits=(-4,-4))
+ax.yaxis.get_offset_text().set_fontsize(35)
+ax.xaxis.get_offset_text().set_fontsize(35)
+for spine in ax.spines.values():
+    spine.set_visible(False)
+color_dict = dict(dColors)
+ax = sns.regplot(x='yield_glc_silico', y ='yield_glc_wet', data = dfY_rl, ci = None)
+for row in dfY_rl.itertuples():
+    try:
+        ax.scatter(row.yield_glc_silico, row.yield_glc_wet, marker='o', color = dColors[row.Index[:-2]], label = row.Index[:-2], s = 400)
+    except:
+        ax.scatter(row.yield_glc_silico, row.yield_glc_wet, marker='o', color = dColors[row.Index], label = row.Index, s = 400)
+#regression part
+slope, intercept, r_value, p_value, std_err = stats.linregress(dfY_rl['yield_glc_silico'],dfY_rl['yield_glc_wet'])
+r_value_s = spearmanr(dfY_rl['yield_glc_silico'],dfY_rl['yield_glc_wet'])
+ax.set_title('Correlation = ' + "{:.2f}".format(r_value_s.correlation), fontsize=55)
+plt.xlabel('Computational yield',fontsize= 45)
+plt.ylabel('Experimental yield',fontsize= 45)
+plt.xlim([min(list(dfY_rl['yield_glc_silico'])) - ((min(list(dfY_rl['yield_glc_silico']))*5)/100), max(list(dfY_rl['yield_glc_silico'])) + ((max(list(dfY_rl['yield_glc_silico']))*2)/100)])
+plt.xticks(fontsize= 35)
+plt.yticks(fontsize= 35)
+plt.legend(fontsize= 30)
+fig.subplots_adjust(left=0.2)
+plt.savefig(os.path.join(FIGUREDIR, 'yieldENGRO_wetVsSilico_Glc_MEDIANSpearman_' + tStampRS + '.pdf'))
+plt.close()
