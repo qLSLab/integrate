@@ -10,7 +10,7 @@ import scipy.stats as stats
 import cobra as cb
 import sklearn.metrics
 from matplotlib.colors import ListedColormap
-from adjustText import adjust_text
+#from adjustText import adjust_text
 from matplotlib.patches import Rectangle
 import genericLib as gL
 
@@ -105,11 +105,6 @@ index_commonMETvsRAS=df_met.index.intersection(df_concRAS.index)
 index_commonFBAvsRAS=df_concFBA.index.intersection(df_concRAS.index)
 indexCommon=index_commonMETvsFBA.intersection(index_commonMETvsRAS)
 
-#save all the datasets of concordances
-#df_concFBA.to_csv(os.path.join(OUTDIR,"df_concFFD.csv"))
-##df_concRAS.to_csv(os.path.join(OUTDIR,"df_concRAS.csv"))
-#df_met.to_csv(os.path.join(OUTDIR,"df_concRPS.csv"))
-
 # Create the indexes of all the reactions in the common datasets
 indexUnion=df_met.index.union(df_concRAS.index).union(df_concFBA.index)
 
@@ -169,15 +164,7 @@ for ind in range(ntest):
         valori2.extend([-el for el in valori2])
 
         dfConcFRD_RASvsMET.loc[reaction,str(ind)]=sklearn.metrics.cohen_kappa_score(valori1,valori2,labels=[-1,0,1],weights="linear",sample_weight=None)
-
-    #for reaction in index_commonFBAvsRAS:
-    #    valori1=list(df_concFBA2.loc[reaction,:].values)
-    #    valori2=list(df_concRAS3.loc[reaction,:].values)
-    #    valori1.extend([-el for el in valori1])
-    #    valori2.extend([-el for el in valori2])
-
-#        dfConcFRD_RASvsFBA.loc[reaction,str(ind)]=sklearn.metrics.cohen_kappa_score(valori1,valori2,labels=##[-1,0,1],weights="linear",sample_weight=None)        
-        
+     
         
 #######################################àà 
 #kappa true
@@ -197,25 +184,12 @@ for reaction in index_commonMETvsRAS:
 
     dfConcRASvsMET.loc[reaction,:]=sklearn.metrics.cohen_kappa_score(valori1,valori2,labels=[-1,0,1],weights="linear",sample_weight=None)
 
-#for reaction in index_commonFBAvsRAS:
-#    valori1=list(df_concFBA2.loc[reaction,:].values)
-#    valori2=list(df_concRAS2.loc[reaction,:].values)
-#    valori1.extend([-el for el in valori1])
-#    valori2.extend([-el for el in valori2])
-
-#    dfConcRASvsFBA.loc[reaction,:]=sklearn.metrics.cohen_kappa_score(valori1,valori2,labels=[-1,0,1],weights="linear",sample_weight=None)
- 
 ###############################Plot of Cohen distribution (random vs experiment)
 #Cumulative distribution
 ecdfRPSvsFBA=ECDF(dfConcFRD_FBAvsMET.values.ravel())
 ecdfRPSvsFBA_result=ECDF(dfConcMETvsFBA["METvsFBA"].values)
 ecdfRASvsMET=ECDF(dfConcFRD_RASvsMET.values.ravel())
 ecdfRASvsMET_result=ECDF(dfConcRASvsMET["RASvsMET"].values)
-
-
-#print(kstest(dfConcFRD_FBAvsMET.values.ravel(),dfConcMETvsFBA["METvsFBA"].values)) 
-#print(kstest(dfConcFRD_RASvsMET.values.ravel(),dfConcRASvsMET["RASvsMET"].values)) 
-#print(kstest(dfConcFRD_RASvsFBA.values.ravel(),dfConcRASvsFBA["RASvsFBA"].values)) 
 
 #####figure of cumulative distributions
 #engro2
@@ -238,33 +212,6 @@ for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
 fig.savefig(os.path.join(FIGUREDIR, "qqplotEngro2.png"),transparent=False,format="png")
 
 
-######## Cumulative distribution
-#fig, ax=plt.subplots(1, 1, figsize=(30, 15))
-
-#ax.plot(ecdfRPSvsFBA.x, ecdfRPSvsFBA.y,"black",label="Random")
-#ax.plot(ecdfRPSvsFBA_result.x, ecdfRPSvsFBA_result.y,"red",label="ENGRO2")
-#ax.legend()
-#ax.grid()
-
-#ax[1].plot(ecdfRASvsMET.x, ecdfRASvsMET.y,"black",label="Random")
-#ax[1].plot(ecdfRASvsMET_result.x, ecdfRASvsMET_result.y,"red",label="ENGRO2")
-
-#ax.set_xlim([-1,1])
-#ax.set_xlim([-1,1])
-#ax.set_ylim([0,1])
-#ax[1].set_ylim([0,1])
-#ax[0].grid()
-#ax[1].grid()
-#ax.set_xlabel("RPS vs FFD",fontsize=40)
-#ax[1].set_xlabel("Cohen",fontsize=25)
-#ax[0].set_title("Distribution RPS vs FBA",fontsize=25)
-#ax[1].set_title("Distribution RPS vs MET",fontsize=25)
-
-#ax.tick_params(axis="x", labelsize=30) 
-#ax.tick_params(axis="y", labelsize=30) 
-#ax.legend(loc=2, prop={'size': 40})
-
-#fig.savefig(os.path.join(FIGUREDIR, "prova.png"),transparent=False,format="png")
 ##########################################fdr correction
 ############pvalues MET vs FBA
 dfConcMETvsFBA=dfConcMETvsFBA.sort_values(by=dfConcMETvsFBA.columns[0],ascending=True)
@@ -298,27 +245,6 @@ i=0
 for el in dfConcRASvsMET.index:
    dict_pvaluesRASvsMET[el]=res[i]
    i=i+1
-#print(dict_pvaluesRASvsMET)
-
-#print("RASvsMET")
-#k=0
-#for el,reaction in zip(res,dfConcRASvsMET.index):
-#    if el==True:    
-#        print(reaction,dfConcRASvsMET.loc[reaction,"RASvsMET"])
-
-##############pvalues MET vs FBA
-#dfConcRASvsFBA=dfConcRASvsFBA.sort_values(by=dfConcRASvsFBA.columns[0],ascending=True)
-#valori=dfConcRASvsFBA.values
-#pvaluesRASvsFBA=[1-ecdfRASvsFBA(el[0]) for el in valori]
-
-#resultsRASvsFBA_correction=fdrcorrection(pvaluesRASvsFBA,0.05)
-#res=resultsRASvsFBA_correction[0]
-
-#print("RASvsFBA")
-#k=0
-#for el,reaction in zip(res,dfConcRASvsFBA.index):
-#    if el==True:    
-#        print(reaction,dfConcRASvsFBA.loc[reaction,"RASvsFBA"])
 
 ###################################
 
@@ -374,11 +300,6 @@ for r in kappa_values.index:
         if kappa_values.loc[r,'RPSvsRAS cohen']>=-1:
             kappa_values.loc[r,'RPSvsRAS pvalue']=1-ecdfRASvsMET(kappa_values.loc[r,'RPSvsRAS cohen'])
             kappa_values.loc[r,'RPSvsRAS adj-pvalue']=dict_pvaluesRASvsMET[r]
-        
-    #if r in df_met2.index and r not in df_concRAS2.index:
-    #    kappa_values.loc[r,'RPSvsRAS cohen']=0
-    #    kappa_values.loc[r,'RPSvsRAS spearman']=0
-    #    kappa_values.loc[r,'RPSvsRAS pvalue']=0   
   
     if r in df_concFBA2.index and r in df_concRAS2.index:
         list1=list(df_concFBA2.loc[r])
@@ -399,7 +320,6 @@ kappa_values.to_csv(os.path.join(OUTDIR, dfconcordanceFile))
 
 ####
 kappa_values["Formula2"]=[str(el)+':'+str(dict_formule[el]) for el in kappa_values.index]
-#kappa_values.index=[str(el)+':'+str(dict_formule[el]) for el in kappa_values.index]
 kappa_values.fillna(-3,inplace=True)  ## just the create a mask map for the next figure
 
 ##############################################################################
@@ -559,7 +479,7 @@ Texts=[]
 for x,y,z in zip(df_cohen["RPSvsFBA "+name],df_cohen["RPSvsRAS "+name],df_cohen.index):
     if (x>=val1 and y>=-1) or (x<=-val1 and y<=-val2 and y>=-1):
         Texts.append(plt.text(x,y,z.split(':')[0],fontsize=15))
-adjust_text(Texts)#,arrowprops=dict(arrowstyle="->", color='r', lw=0.5))
+#adjust_text(Texts)#,arrowprops=dict(arrowstyle="->", color='r', lw=0.5))
 f.colorbar(im, ax=ax,orientation="horizontal")
 im.set_clim(-1,1)
 
@@ -580,7 +500,6 @@ index=[ind.split(":")[0] for ind in index]
 df_mean_RPS=df_met_mean2.loc[index]
 df_FBA=pd.DataFrame()
 
-for datasetFBA,datasetRAS,test in zip(datasetsFBA,datasetsRAS,tests):
     df_FBA[str(test[0])]=datasetFBA["median_"+test[0]]
     df_FBA[str(test[1])]=datasetFBA["median_"+test[1]]
 
