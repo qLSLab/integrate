@@ -207,9 +207,9 @@ mpl.rcParams.update(mpl.rcParamsDefault)
 
 dp=sc.pl.dotplot(adata, df_marker_list, groupby="clusters",expression_cutoff =0,
                swap_axes =True, dendrogram=False,return_fig=True,
-                size_title ="% of samples",
+                size_title ="% of samples above mean",
                  #cmap ="binary",
-                 use_raw=True,
+                 use_raw=False,
                 colorbar_title ="Normalized Mean")
 
 dp.savefig(os.path.join(FIGUREDIR, dotplotFigure))
